@@ -17,17 +17,19 @@ $admin_email = '';
 
 //EMAIL SETTINGS
 //SEND TEST EMAILS THROUGH FORM TO https://www.mail-tester.com GENERATED ADDRESS FOR SPAM SCORE
-$from_email = 'youremail@domain.com'; //Webmaster email
-$from_name = 'Test Email'; //"From name" displayed on email
+$from_email = 'epi.stat.canada@gmail.com'; //'youremail@domain.com'; //Webmaster email
+$from_name = 'jinweb admin';//'Test Email'; //"From name" displayed on email
 
 //Find specific server settings at https://www.arclab.com/en/kb/email/list-of-smtp-and-pop3-servers-mailserver-list.html
 $mailServerType = 'smtp';
 //IF $mailServerType = 'smtp'
-$smtp_server = 'smtp.mail.domain.com';
-$smtp_user = 'youremail@domain.com';
-$smtp_pw = 'yourEmailPassword';
+$smtp_server = 'smtp.gmail.com'; //'smtp.mail.domain.com';
+$smtp_user = 'epi.stat.canada@gmail.com';  //'youremail@domain.com';
+$smtp_pw = 'Pat~0123';//'yourEmailPassword';
 $smtp_port = 465; //465 for ssl, 587 for tls, 25 for other
 $smtp_security = 'ssl';//ssl, tls or ''
+
+
 
 //HTML Messages shown before URL in emails (the more
 $verifymsg = 'Click this link to verify your new account!'; //Verify email message

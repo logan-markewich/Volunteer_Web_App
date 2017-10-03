@@ -12,9 +12,11 @@ body {
 .form-signin .form-signin-heading, .form-signup .form-signup-heading,
 .form-signin .checkbox, .form-signup .checkbox {
   margin-bottom: 10px;
+  
 }
 .form-signin .checkbox, .form-signup .checkbox{
   font-weight: normal;
+
 }
 .form-signin .form-control, .form-signup .form-control {
   position: relative;

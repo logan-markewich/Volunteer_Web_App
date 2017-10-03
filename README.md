@@ -1,6 +1,8 @@
 
 
+clone recursively to get PHPMailer
 
+git clone --recursive URL
 
 How to run this application
 

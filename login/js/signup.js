@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
   $("#submit").click(function(){
 
     var username = $("#newuser").val();

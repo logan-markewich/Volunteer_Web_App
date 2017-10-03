@@ -30,7 +30,10 @@ $(document).ready(function () {
                     $("#message").html("<p class='text-center'><img src='images/ajax-loader.gif'></p>");
                 }
             });
+            
         }
+        
         return false;
+        
     });
 });

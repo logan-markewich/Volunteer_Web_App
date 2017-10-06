@@ -1,0 +1,264 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	height:100%;
+	padding: 0;
+	margin:0px;
+	font-family: Calibri, Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
+	font-size:17pt;
+	background-color: #D46527;
+}
+a {
+	color:#D46527;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover {
+	color:#09476C;
+	text-decoration: none;
+}
+img {
+	max-width:100%;
+}
+.orange {
+	color:#D46527;
+}
+.blue {
+	color:#09476C;
+}
+.white {
+	color:#fff;
+}
+.right {
+	float: right;
+}
+.left {
+	float:left;
+}
+.clr {
+	clear: both;
+}
+div#contain {
+	width:1400px;
+	max-width:100%;
+	margin:auto;
+}
+div#hdr {
+	height:140px;
+	background: url(img/2017-header.png) no-repeat center center;
+	background-color: #fff;
+}
+div#hdr div {
+	display:inline-block;
+	position:relative;
+	height:140px;
+}
+
+div#mnu {
+	background-color: #09476C;
+	color:#fff;
+	margin-bottom:5px;
+	height:50px;
+	text-align: center;
+}
+div#social {
+	width:180px;
+	height:35px;
+	display: inline-block;
+	float:right;
+	margin-top:5px;
+}
+div#social img {
+	margin-right:10px;
+}
+
+div#ftr {
+	margin-top:5px;
+	background-color: #09476C;
+	text-align: center;
+	font-size:15pt;
+	color:#fff;
+	padding:20px;
+}
+div#ftr a {
+	font-weight: normal;
+	color:#fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+div#ftr a:hover {
+	text-decoration: none;
+	color:#D46527;
+}
+div#ftr p {
+	font-size:20pt;
+	padding:0px 55px 0px 55px;
+	font-weight: normal;
+}
+div#ftr p span {
+	font-size:12pt;
+}
+h1,h2,h3,h4,h5 {
+	font-family: Calibri, Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
+	font-weight:bold;
+	margin:5px 0px 10px 0px;
+	text-transform:uppercase;
+}
+h1 {
+	font-family:'garamond';
+	margin-bottom:20px;
+	color:#D46527;
+	font-size:28pt;
+}
+h2 {
+	color:#09476C;
+	font-size:22pt;
+}
+h3 {
+	color:#555;
+	font-size:18pt;
+	
+}
+div#main-content {
+	padding:25px;	
+	min-height:590px;
+	background-color: #fff;
+	margin-top:5px;
+}
+table {
+	empty-cells: show;
+	border-collapse: collapse;
+	
+}
+td, th {
+	padding:5px;
+	border:1px #666 solid;
+}
+th {
+	background-color:#09476C;
+	color:#fff;
+	border:1px #09476C solid;
+	text-align: left;
+	font-family:inherit;
+}
+img.lpad {
+	padding:0px 0px 15px 15px;
+}
+.nomob {
+	display:inherit;
+}
+div#menu-mobile {
+	display:none;
+}
+select#mobile-nav {
+	width:100vw;
+	font-size: 14pt;
+}
+div#mob-social {
+	display: none;
+}
+div#fly-out {
+	
+	position:fixed;
+	color:#fff;
+	height:30px;
+	background:url(/img/fly-out.png) #000 right no-repeat;
+	background-position:center right;
+	overflow:hidden;
+	width:100%;
+	font-size:18pt;
+	cursor:pointer;
+	z-index:3000;
+	display:none;
+}
+div#fly-out a {
+	display:block;
+	padding:5px;
+	color:#fff;
+	font-weight:normal;
+	background-color:#000;
+	font-size:12pt;
+}
+.highlight {
+	background-color:#000;	
+}
+table#coach-list td {
+	font-size:70%;
+	empty-cells: show;
+	vertical-align: top;
+}
+div.imp-not {
+	padding:20px;
+	background-color:#222;
+	color:#fff;
+	border:double 3px #D46527;
+	display:inline;
+	margin-top:25px;
+} 
+div.imp-not a {
+	color:#fff;
+}
+div.imp-not a:hover {
+	text-decoration: underline;
+}
+@media only screen and (max-width: 768px) {
+	.nomob {
+		display:none !important;
+	}
+	div#menu {
+		display:none !important;
+	}
+	div#social {
+		display:none !important;
+	}
+	p#ftrmnu {
+		display:none !important;
+	}
+	div#ftr p, body {
+		font-size:12pt;
+	}
+	div#ftr p {
+		padding:10px;
+	}
+	div#main-content {
+		padding:15px 20px 25px 20px;
+	}
+	div#hdr {
+		height:102px;
+		background-image:url(/img/2017-header-mobile.png);
+		background-position: center bottom;
+	}
+	div#ftr {
+		font-size: 12pt;
+	}
+	div#menu-mobile {
+		display:block !important;
+		width:100vw;
+	}
+	div#mnu {
+		height: auto;
+		background-color: #fff;
+	}
+	div#mob-social {
+		display: inline;
+	}
+	div#mob-social a {
+		margin-left:10px;
+	}
+	div#mob-social:first-child {
+		margin-left:0px;
+	}
+	div#ftr {
+		background-color: #D46527
+	}
+	body {
+		background-color: #fff;
+	}
+	div#ftr a:hover {
+		text-decoration: none;
+		color:#09476C;
+	}
+	div#fly-out {
+		display:block;
+	}
+}

@@ -1,0 +1,25 @@
+#shiftarea {
+	background-color:#e8e7e7;
+	width: auto;
+	height: 25.6em;
+	overflow-y: scroll;
+	overflow-x: hidden;	
+}
+
+#shiftRow {
+	text-align: center;
+}
+
+#contain h1 {
+	text-align: center;
+}
+
+@media (max-width:49em) {
+	#shiftBtn h3 {
+		font-size: 15pt;
+	}
+	
+	#shiftRow h2 {
+		font-size: 18pt;
+	}
+}

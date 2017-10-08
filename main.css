@@ -1,0 +1,33 @@
+#contain {
+	background-color: #D46527;
+}
+
+#Main {
+	margin: 1em 1em 1em 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+    text-align: center;
+	align-content: center;
+	background-color: #fff;
+}
+
+#left {
+	margin: 0 auto;
+}
+
+#right {
+	margin: 0 auto;
+}
+
+#signInStart {
+	margin-top: 5em;
+}
+
+@media (max-width:49em){
+    #left{
+        display: none;
+    }
+	#right{
+		display: none;
+	}
+}

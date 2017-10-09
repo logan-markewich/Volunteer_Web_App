@@ -15,17 +15,5 @@ CREATE TABLE `members` (
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `loginAttempts` (
-  `IP` varchar(20) NOT NULL,
-  `Attempts` int(11) NOT NULL,
-  `LastLogin` datetime NOT NULL,
-  `Username` varchar(65) DEFAULT NULL,
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-
 
 END

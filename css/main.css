@@ -27,6 +27,10 @@ input {
 	margin-top: 2em;
 }
 
+#description {
+	text-align: left;
+}
+
 @media (max-width:49em){
     #left{
         display: none;

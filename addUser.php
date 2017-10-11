@@ -1,9 +1,20 @@
 <?php
 			//echo $_SERVER["REQUEST_URI"];
+			//echo $_SERVER["REQUEST_ROOT"];
+			
 			//echo '</br>';
-			//echo $_SERVER['DOCUMENT_ROOT'];
-			include ($_SERVER['DOCUMENT_ROOT'].'/cmpt370/Volunteer_Web_App/phptools.php'); //include the phptools
+			
 			session_start();
+			
+			$_session['indexURL'] = getcwd();	//$_SERVER["REQUEST_URI"];		
+		
+			//include ($_SERVER['DOCUMENT_ROOT'].'/cmpt370_2/phptools.php'); //include the phptools
+			include ($_session['indexURL'].'/phptools.php'); //include the phptools
+			
+			//echo  getcwd();
+			
+			//session_start();
+
 
 			//session_start(); //it is critical to have it here, so as to remember all the global var values henceforward
 										//if the above line is disabled, the session_start() does not remmeber the global value until the first line in login-success.php;
@@ -23,7 +34,7 @@
 			$thenewpassword=$_POST['pwd']; 
 			
 			
-			//echo "the user info: $theusername; $thepassword; $theemail";br();
+// 			echo "the user info: $theusername; $thepassword; $theemail";br();
 
 			// To protect MySQL injection (more detail about MySQL injection)
 			$thenewusername = stripslashes($thenewusername); //stripslashes is to remove backslashes
@@ -52,16 +63,18 @@
 			else {
 echo "line 51".$thenewusername;
 echo '</br>';
-echo "line 52".$thenewemail;br();
+echo "line 52".$thenewemail;
 					
 						//select rows matching the username or the email address, so as to reject adding new users if the username or email address exists
 						//It is simpler, safer, and more reliable to call procedures instead of putting statements directly;
-						$sql=" call selectRows('members', ' username=\'$thenewusername\' or email= \'$thenewemail\'  ') ";
+						//$sql=" call selectRows('members', ' username=\'$thenewusername\' or email= \'$thenewemail\'  ') ";
+						$sql = "SELECT username, email FROM members where username = '$thenewusername' or email='$thenewemail' ";
+						//$result = mysqli_query($dbc, "SELECT email from members");
 						$result=mysqli_query($dbc, $sql); /*execute the query for MySQL, the $result is a list of records from the MySQL table 'users', which matches the query conditons*/
-echo "line 57".$result;
+//echo "line 57".$result;
 						// Mysql_num_row is counting table row
 						$count=mysqli_num_rows($result); /*counting the rows*/
-						//echo "count= $count </br>";
+						echo "count= $count </br>";
 						//always close the connection;
 						$dbc -> close();
 						
@@ -81,7 +94,8 @@ echo "line 57".$result;
 								
 						}
 						else {
-									echo "The user name or email address has been taken, go back to the <a href=\"/epi/admin_pages/signup.html\">sign up</a> page, retry by using another user or email address";
+									echo "The user name or email address has been taken, go back to the <a href=\"signUp.html\">sign up</a> page, retry by using another user or email address";
+									exit;
 									}
 			}
 			
@@ -92,7 +106,7 @@ vericode:
 	//https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
 	//https://github.com/PHPMailer/PHPMailer
 	//include ($_SERVER['DOCUMENT_ROOT'].'/cmpt370/Volunteer_Web_App/phptools.php')
-	require_once($_SERVER['DOCUMENT_ROOT'].'/cmpt370/Volunteer_Web_App/PHPMailer/PHPMailerAutoload.php');
+	require_once($_session['indexURL'].'/PHPMailer/PHPMailerAutoload.php');
 	$mail = new PHPMailer();
 	$mail -> isSMTP();
 	$mail -> SMTPAuth=true;
@@ -111,6 +125,10 @@ vericode:
 	$mail -> Subject = 'Sign up Verification';
 	$mail -> Send();
 	echo 'email sent to '.$thenewemail;
-	header("location:/cmpt370/Volunteer_Web_App/veriform.php");	
+	br();
+	//echo ("location:".$_session['indexURL']."/veriform.php");br();
+	//header("location:/Applications/XAMPP/xamppfiles/htdocs/cmpt370_2/veriform.php");
+	//header("location:".$_session['indexURL']."/veriform.php");
+	header("location:veriform.php");	
 stop:
 ?>

@@ -6,37 +6,7 @@
 	//include ($_session['indexURL'].'/phptools.php'); //include the phptools
 	include ('phptools.php');
 
- //it is critical to have it here, so as to remember all the global var values henceforward
-										//if the above line is disabled, the session_start() does not remmeber the global value until the first line in login-success.php;
-										//as such, the $_session['theusername'] on the login-success.php won't have any value;
-//check the reCAPTCHA status
-//codes are from https://www.codexworld.com/new-google-recaptcha-with-php/
-// if(isset($_POST['submit']) && !empty($_POST['submit'])):
-//     if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])):
-//         //your site secret key
-//         $secret = '6LeY0yYUAAAAAEzHcc-3-iR7lDBTtLzv03XQErTB';
-//         //get verify response data
-//         $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
-//         $responseData = json_decode($verifyResponse);
-//         if($responseData->success):
-//             //$succMsg = 'Your contact request have submitted successfully.';
-//             goto success;
-//         else:
-//             $errMsg = 'Robot verification failed, please go back to the <a href=\"/epi/admin_pages/veriform.php\">verification</a> page, and try again.';
-//             //goto success; //tmp
-//             echo $errMsg;
-//             goto stop;
-//         endif;
-//     else:
-//         $errMsg = 'and click on the reCAPTCHA box to prove that you are not a robot.';
-//         //goto success; //tmp
-//         echo "Please go back to the <a href=\"/epi/admin_pages/veriform.php\">verification</a> page, ". $errMsg;
-//         goto stop;
-//     endif;
-// else:
-//     $errMsg = '';
-//     $succMsg = '';
-// endif;
+ 
 
 success:
 

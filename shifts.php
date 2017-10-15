@@ -34,6 +34,7 @@
 			</div>
 		</div>
 		<!-- Php should make a row for every two events -->
+		<div id="Main">
 		<h1>PHP should put event name here</h1>
 		<div class="row" id="shiftRow">
   			<div class="col-sm-6" id="shifts-left">
@@ -79,6 +80,7 @@
 					</button>
 				</div>
 			</div>
+		</div>
 		</div>
 		
 		<div class="col-sm-12" id="ftr">

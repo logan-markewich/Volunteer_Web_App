@@ -41,32 +41,32 @@
 				<form class="form-horizontal" name="createEvent" action="/newEvent.php" method="post">
 					<!-- Event Creation Form -->
   					<div class="form-group">
-    					<label class="control-label col-sm-3" for="name">Event Name:</label>
-    					<div class="col-sm-9">
+    					<label class="control-label col-sm-2" for="name">Event Name:</label>
+    					<div class="col-sm-10">
       						<input type="text" name="eventName" class="form-control" id="shift_sign_up" placeholder="Event Name">
     					</div>
   					</div>
 					<div class="form-group">
-    					<label class="control-label col-sm-3" for="name">Event Loction:</label>
-    					<div class="col-sm-9">
+    					<label class="control-label col-sm-2" for="name">Event Location:</label>
+    					<div class="col-sm-10">
       						<input type="text" name="location" class="form-control" id="shift_sign_up" placeholder="Location">
     					</div>
   					</div>
 					<div class="form-group">
-    					<label class="control-label col-sm-3" for="date">Start Date:</label>
-    					<div class="col-sm-9">
+    					<label class="control-label col-sm-2" for="date">Start Date:</label>
+    					<div class="col-sm-10">
       						<input type="date" name="startDate" class="form-control" id="shift_sign_up" placeholder="17/11/30 for November 30, 2017">
     					</div>
   					</div>        
   					
 					<div class="form-group">
-    					<label class="control-label col-sm-3" for="date">End Date:</label>
-    					<div class="col-sm-9">
+    					<label class="control-label col-sm-2" for="date">End Date:</label>
+    					<div class="col-sm-10">
       						<input type="date" name="endDate" class="form-control" id="shift_sign_up" placeholder="17/12/03 for December 3, 2017">
     					</div>
   					</div>
   					<div class="form-group"> 
-    					<div class="col-sm-offset-3 col-sm-9">
+    					<div class="col-sm-offset-2 col-sm-10">
       						<button type="submit" class="btn btn-default">Submit</button>
     					</div>
   					</div>

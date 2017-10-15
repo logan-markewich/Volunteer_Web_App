@@ -1,5 +1,11 @@
+body, html{
+   height: 100%;
+   padding: 0;
+}
+
 #contain {
 	background-color: #D46527;
+	height: inherit;
 }
 
 #Main {
@@ -9,6 +15,17 @@
     text-align: center;
 	align-content: center;
 	background-color: #fff;
+}
+
+#welcome {
+	text-align: left;
+	margin-left: 0.5em;
+	margin-top: -0.25em;
+}
+
+#dashOptions button {
+	width: 10em;
+	font-size: 1.25em;
 }
 
 #left {
@@ -29,6 +46,14 @@ input {
 
 #description {
 	text-align: left;
+}
+
+#volInfo {
+	align-content: left;
+}
+
+#volInfo input, label {
+	margin-bottom: 1em;
 }
 
 @media (max-width:49em){

@@ -1,0 +1,75 @@
+body, html{
+   height: 100%;
+   padding: 0;
+}
+
+#contain {
+	background-color: #D46527;
+	height: inherit;
+}
+
+#Main {
+	margin: 1em 1em 1em 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+    text-align: center;
+	align-content: center;
+	background-color: #fff;
+}
+
+#welcome {
+	text-align: left;
+	margin-left: 0.5em;
+	margin-top: -0.25em;
+}
+
+#dashOptions button {
+	width: 10em;
+	font-size: 1.25em;
+}
+
+#left {
+	margin: 0 auto;
+}
+
+#right {
+	margin: 0 auto;
+}
+
+input {
+	text-align: center;
+}
+
+#signInStart {
+	margin-top: 2em;
+}
+
+#description {
+	text-align: left;
+}
+
+#volInfo {
+	align-content: left;
+}
+
+#volInfo input, label {
+	margin-bottom: 1em;
+}
+
+#edit {
+	display:inline;
+}
+
+h3i{
+	font-size: 24px;
+	display:linline;
+}
+
+@media (max-width:49em){
+    #left{
+        display: none;
+    }
+	#right{
+		display: none;
+	}
+}

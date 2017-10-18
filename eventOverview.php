@@ -67,11 +67,11 @@ $_SESSION["numShifts"]=$row["numShifts"];
 			<h2> Event Details </h2>
 			<div id="edit">
 			<h3i>Location: <?php echo $_SESSION['location']; ?></h3i>
-			<button> Edit </button>
+			<button id="editLocationBtn" type="submit" class="btn btn-default"> Edit </button>
 			</div>
 			<div>
 			<h3i>Dates: <?php echo date('F j, Y',strtotime($_SESSION['startDate']))." - ".date('F j, Y',strtotime($_SESSION['endDate'])); ?></h3i>
-			<button> Edit </button>
+			<button id="exitBtn" type="submit" class="btn btn-default"> Edit </button>
 			</div>
 			<div>
 			<div>
@@ -90,17 +90,19 @@ $_SESSION["numShifts"]=$row["numShifts"];
 			<div class="col-sm-5">
 			<h2>Shift Information</h2>
 			<div>
-			<button> Manage Shift Types/Decriptions </button>
+			<button id="editShiftsTypeBtn" type="submit" class="btn btn-default"> Manage Shift Types/Decriptions </button>
 			</div>
 			<div>
-			<button> Add Shifts </button>
+			<button id="addShiftsBtn" type="submit" class="btn btn-default"> Add Shifts </button>
 			</div>
 			<div>
-			<button> Manage Existing Shifts </button>
+			<button id="editShiftsBtn" type="submit" class="btn btn-default"> Manage Existing Shifts </button>
 			</div>
 		</div>
 			
 		<!-- Footer Information -->
+		</div>
+		</div>
 		<div class="col-sm-12" id="ftr">
         	<center>
         		<div id="mob-social">
@@ -113,8 +115,9 @@ $_SESSION["numShifts"]=$row["numShifts"];
 				</p>
         		<p><span>Copyright Hollandia Soccer Club; <? echo date("Y"); ?>  	All Rights Reserved.</span></p>
         	</center>
-		</div>
 	</div>
+	</div>
+	
 
 </body>
 </html>

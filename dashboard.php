@@ -9,6 +9,7 @@ require('database.php');?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/menu.css">
 	<link rel="stylesheet" href="/css/hdr_ftr.css">
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -39,28 +40,13 @@ require('database.php');?>
 			</div>
 		</div>
 		
+		<div id="mnu">
+			<?php include('menu.php'); ?>
+		</div>
 		<div id="Main">
 		<div class="row" id="dashOptions">
 			<div class="col-sm-6">
 				<h1 id="welcome"> Welcome, <?php echo($_SESSION["name"]); ?></h1>
-			</div>
-			<div id="options" class="col-sm-2">
-				<!-- Create Event Form -->
-				<form name="create" action="/createEvent.php">
-					<button id="createEvent" type="submit" class="btn btn-default">Create Event</button>
-				</form>
-			</div>
-			<div id="options" class="col-sm-2">
-				<!-- Create Event Form -->
-				<form name="create" action="">
-					<button id="editEvent" type="submit" class="btn btn-default">Edit Event</button>
-				</form>
-			</div>
-			<div id="options" class="col-sm-2">
-				<!-- Logout Form -->
-				<form name="logout" action="/logout.php">
-					<button id="logout" type="submit" class="btn btn-default">Logout</button>
-				</form>
 			</div>
 		</div>
 		

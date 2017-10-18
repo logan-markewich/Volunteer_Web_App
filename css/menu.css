@@ -1,4 +1,4 @@
-label.toggle {width:30px; height:12px; position:absolute; right:10px; top:10px; cursor:pointer; border-top:4px solid #fff; border-bottom:4px solid #fff; display:none;}
+﻿label.toggle {width:30px; height:12px; position:absolute; right:10px; top:10px; cursor:pointer; border-top:4px solid #fff; border-bottom:4px solid #fff; display:none;}
 label.toggle:before {content:""; display:block; width:30px; height:4px; background:#fff; position:absolute; left:0; top:4px;}
 label.toggle span {position:absolute; left:-99999px;}
 
@@ -9,7 +9,7 @@ width:100%;
 position:relative; 
 right:0;
 top:0; 
-background:#09476C; 
+background-color:#09476C; 
 z-index:400; 
 height:50px; 
 text-align:center;
@@ -19,8 +19,6 @@ text-align:center;
 *display:inline; /* for IE7 */
 width: 100%;
 background-color: #09476C;
-margin-top:8px;
-padding: 5px 5px 0 5px;
 	
 }
 .menu ul {margin:0; padding:0; list-style:none; white-space:nowrap; text-align:left;}

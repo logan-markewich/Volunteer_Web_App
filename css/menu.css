@@ -4,9 +4,23 @@ label.toggle span {position:absolute; left:-99999px;}
 
 input#toggle {position:absolute; display:none;}
 
-.menuHolder {width:100%; position:relative; right:0; top:0; background:#09476C; z-index:400; height:50px; text-align:center;}
+.menuHolder {
+width:100%; 
+position:relative; 
+right:0;
+top:0; 
+background:#09476C; 
+z-index:400; 
+height:50px; 
+text-align:center;
+}
+
 .menu {display:inline-block;
 *display:inline; /* for IE7 */
+width: 100%;
+background-color: #09476C;
+margin-top:8px;
+padding: 5px 5px 0 5px;
 	
 }
 .menu ul {margin:0; padding:0; list-style:none; white-space:nowrap; text-align:left;}

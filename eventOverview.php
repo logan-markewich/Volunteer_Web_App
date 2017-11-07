@@ -59,6 +59,7 @@ $_SESSION["numShifts"]=$row["numShifts"];
 		<div class="row" id="dashOptions">
 			<div class="col-sm-12">
 				<h1 id="welcome"> <?php echo($_SESSION["eventName"]); ?></h1>
+				<button id="editLocationBtn" type="submit" class="btn btn-default" onclick = "location.href='/deleteEvent.php'" > Delete Event </button>
 			</div>
 		</div>
 		

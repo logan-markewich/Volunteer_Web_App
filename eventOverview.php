@@ -67,11 +67,11 @@ $_SESSION["numShifts"]=$row["numShifts"];
 			<h2> Event Details </h2>
 			<div id="edit">
 			<h3i>Location: <?php echo $_SESSION['location']; ?></h3i>
-			<button id="editLocationBtn" type="submit" class="btn btn-default"> Edit </button>
+			<button id="editLocationBtn" type="submit" class="btn btn-default" onclick = "location.href='/editEventLocation.php'"> Edit </button>
 			</div>
 			<div>
 			<h3i>Dates: <?php echo date('F j, Y',strtotime($_SESSION['startDate']))." - ".date('F j, Y',strtotime($_SESSION['endDate'])); ?></h3i>
-			<button id="exitBtn" type="submit" class="btn btn-default"> Edit </button>
+			<button id="exitBtn" type="submit" class="btn btn-default" onclick = "location.href='/editEventDates.php'"> Edit </button>
 			</div>
 			<div>
 			<div>

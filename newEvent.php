@@ -12,4 +12,28 @@ if (mysqli_query($conn, $sql)) {
 }
 
 mysqli_close($conn);
+
+
+
+require('database.php');
+session_start();
+
+$sql = "CALL create_shifts_at_event_table('" . $_POST["eventName"] . "')";
+
+if (mysqli_query($conn, $sql)) {
+    header("Location: dashboard.php");
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+
+
+
+
+
+
+
+
+
 ?> 

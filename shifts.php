@@ -1,3 +1,31 @@
+
+<?php session_start(); 
+require('database.php');
+$sql = ("SELECT * FROM cmpt370_rdynam.events WHERE idEvent='" . $_GET['id'] . "'");
+$result = mysqli_query($conn, $sql);
+$_SESSION['id'] = $_GET['id'];
+while($row = $result -> fetch_assoc()){
+$_SESSION["eventName"]=$row["eventName"];
+$_SESSION["location"]=$row["location"];
+$_SESSION["startDate"]=$row["startDate"];
+$_SESSION["endDate"]=$row["endDate"];
+$_SESSION["numShifts"]=$row["numShifts"];
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,10 +63,10 @@
 		</div>
 		<!-- Php should make a row for every two events -->
 		<div id="Main">
-		<h1>PHP should put event name here</h1>
+		<h1> <?php echo($_SESSION["eventName"]); ?> </h1> 
 		<div class="row" id="shiftRow">
   			<div class="col-sm-6" id="shifts-left">
-				<h2>Event date goes here(php should make only one column if only one day event</h2>
+				<h2> <?php echo "Start Date: " ?> <?php echo($_SESSION["startDate"]); ?> </h2>
 				<div id="shiftarea">
 					<!-- Php should make a button for each shift -->
 					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
@@ -60,7 +88,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6" id="shifts-right">
-				<h2>Event date goes here(php should make only one column if only one day event</h2>
+				<h2><?php echo "End Date: " ?> <?php echo($_SESSION["endDate"]); ?></h2>
 				<div id="shiftarea">
 					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
 						<h3>Shift time | Shift title</h3>

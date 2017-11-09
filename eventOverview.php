@@ -58,7 +58,7 @@ $_SESSION["numShifts"]=$row["numShifts"];
 		<div id="Main">
 		<div class="row" id="dashOptions">
 			<div class="col-sm-12">
-				<h1 id="welcome"> <?php echo($_SESSION["eventName"]); ?></h1>
+				<h1 id="welcome"> <?php echo($_SESSION["eventName"]); ?>  </h1>
 				<button id="editLocationBtn" type="submit" class="btn btn-default" onclick = "location.href='/deleteEvent.php'" > Delete Event </button>
 			</div>
 		</div>
@@ -68,7 +68,7 @@ $_SESSION["numShifts"]=$row["numShifts"];
 			<h2> Event Details </h2>
 			<div id="edit">
 			<h3i>Location: <?php echo $_SESSION['location']; ?></h3i>
-			<button id="editLocationBtn" type="submit" class="btn btn-default" onclick = "location.href='/editEventLocation.php'"> Edit </button>
+			<button id="editLocationBtn" type="submit" class="btn btn-default" onclick = "location.href='/editEventLocation.php'" > Edit </button>
 			</div>
 			<div>
 			<h3i>Dates: <?php echo date('F j, Y',strtotime($_SESSION['startDate']))." - ".date('F j, Y',strtotime($_SESSION['endDate'])); ?></h3i>
@@ -91,13 +91,15 @@ $_SESSION["numShifts"]=$row["numShifts"];
 			<div class="col-sm-5">
 			<h2>Shift Information</h2>
 			<div>
-			<button id="editShiftsTypeBtn" type="submit" class="btn btn-default"> Manage Shift Types/Decriptions </button>
+			<button id="editShiftsTypeBtn" type="submit" class="btn btn-default"  > Manage Shift Types/Decriptions </button>
 			</div>
+			
 			<div>
-			<button id="addShiftsBtn" type="submit" class="btn btn-default"> Add Shifts </button>
+			<button id="addShiftsBtn" type="submit" class="btn btn-default"  > Add Shifts </button>
 			</div>
+			
 			<div>
-			<button id="editShiftsBtn" type="submit" class="btn btn-default"  onclick = "location.href= '/shifts.php'"> Manage Existing Shifts </button>
+			<button id="editShiftsBtn" type="submit" class="btn btn-default" onclick = "location.href= '/shifts.php'" > Manage Existing Shifts </button>
 			</div>
 		</div>
 			

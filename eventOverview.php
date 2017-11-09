@@ -97,7 +97,7 @@ $_SESSION["numShifts"]=$row["numShifts"];
 			<button id="addShiftsBtn" type="submit" class="btn btn-default"> Add Shifts </button>
 			</div>
 			<div>
-			<button id="editShiftsBtn" type="submit" class="btn btn-default"> Manage Existing Shifts </button>
+			<button id="editShiftsBtn" type="submit" class="btn btn-default"  onclick = "location.href= '/shifts.php'"> Manage Existing Shifts </button>
 			</div>
 		</div>
 			

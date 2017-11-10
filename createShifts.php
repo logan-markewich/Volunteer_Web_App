@@ -77,16 +77,16 @@ $_SESSION["numShifts"]=$row["numShifts"];
     					</div>
   					</div>
 					<div class="form-group">
-    					<label class="control-label col-sm-2" for="date">Start Date:</label>
+    					<label class="control-label col-sm-2" for="date">Start Time:</label>
     					<div class="col-sm-10">
-      						<input type="date" name="startDate" class="form-control" id="shift_sign_up" placeholder="17/11/30 for November 30, 2017">
+      						<input type="date" name="startDate" class="form-control" id="shift_sign_up" placeholder=" 00:00 ">
     					</div>
   					</div>        
   					
 					<div class="form-group">
-    					<label class="control-label col-sm-2" for="date">End Date:</label>
+    					<label class="control-label col-sm-2" for="date">End Time:</label>
     					<div class="col-sm-10">
-      						<input type="date" name="endDate" class="form-control" id="shift_sign_up" placeholder="17/12/03 for December 3, 2017">
+      						<input type="date" name="endDate" class="form-control" id="shift_sign_up" placeholder=" 00:00 ">
     					</div>
   					</div>
   					

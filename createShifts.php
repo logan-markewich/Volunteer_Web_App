@@ -62,43 +62,43 @@ $_SESSION["numShifts"]=$row["numShifts"];
 		<div class="row" id="Main">
 			<div class="col-sm-12" id="volInfo">
 			<h1> <?php echo($_SESSION["eventName"]); ?> <?php echo '-- Shift Information' ?> </h1> 
-				<form class="form-horizontal" name="createEvent" action="/newEvent.php" method="post">
+				<form class="form-horizontal" name="createShift" action="/newShift.php" method="post">
 					<!-- Event Creation Form -->
   					<div class="form-group">
     					<label class="control-label col-sm-2" for="name">Shift Location:</label>
     					<div class="col-sm-10">
-      						<input type="text" name="eventName" class="form-control" id="shift_sign_up" placeholder="Shift Location">
+      						<input type="text" name="location" class="form-control" id="shift_sign_up" placeholder="Shift Location">
     					</div>
   					</div>
 					<div class="form-group">
     					<label class="control-label col-sm-2" for="name">Shift Date:</label>
     					<div class="col-sm-10">
-      						<input type="text" name="location" class="form-control" id="shift_sign_up" placeholder="Shift Date">
+      						<input type="date" name="date" class="form-control" id="shift_sign_up" placeholder="17/11/30 for November 30, 2017">
     					</div>
   					</div>
 					<div class="form-group">
     					<label class="control-label col-sm-2" for="date">Start Time:</label>
     					<div class="col-sm-10">
-      						<input type="date" name="startDate" class="form-control" id="shift_sign_up" placeholder=" 00:00 ">
+      						<input type="time" name="startTime" class="form-control" id="shift_sign_up" placeholder=" 00:00 ">
     					</div>
   					</div>        
   					
 					<div class="form-group">
     					<label class="control-label col-sm-2" for="date">End Time:</label>
     					<div class="col-sm-10">
-      						<input type="date" name="endDate" class="form-control" id="shift_sign_up" placeholder=" 00:00 ">
+      						<input type="time" name="endTime" class="form-control" id="shift_sign_up" placeholder=" 00:00 ">
     					</div>
   					</div>
   					
   					<div class="form-group">
     					<label class="control-label col-sm-2" for="date">Number Of Volunteers:</label>
     					<div class="col-sm-10">
-      						<input type="date" name="endDate" class="form-control" id="shift_sign_up" placeholder="Number Of Volunteers">
+      						<input type="integer" name="number_of_vol" class="form-control" id="shift_sign_up" placeholder="Number Of Volunteers">
     					</div>
   					</div>
   					<div class="form-group"> 
     					<div class="col-sm-offset-2 col-sm-10">
-      						<button type="submit" class="btn btn-default">Submit</button>
+      						<button type="submit" class="btn btn-default" action="/newShift.php" method="post"    >Submit</button>
     					</div>
   					</div>
 				</form>

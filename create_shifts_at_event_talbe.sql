@@ -6,7 +6,7 @@ BEGIN
     SET @createTab=CONCAT("CREATE TABLE ", event_name, "
     (idShift INT  NOT NULL AUTO_INCREMENT,
     shiftLocation VARCHAR(100),
-    startTime TIME,
+    start_Time TIME,
     end_Time TIMES,
     date_Time DATE,
     number_of_volunteers INT,

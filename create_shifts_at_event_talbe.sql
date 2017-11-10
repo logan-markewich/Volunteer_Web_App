@@ -7,12 +7,10 @@ BEGIN
     (idShift INT  NOT NULL AUTO_INCREMENT,
     shiftLocation VARCHAR(100),
     startTime TIME,
-    end_Time TIME,
-    date_time DATE,
-    vol_name VARCHAR(100),
-    vol_phone INT,
-    vol_email VARCHAR(100),
-    vol_description VARCHAR(255),
+    end_Time TIMES,
+    date_Time DATE,
+    number_of_volunteers INT,
+    PRIMARY KEY (idShift))
     PRIMARY KEY (idShift))
     ");
     

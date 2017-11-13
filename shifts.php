@@ -22,17 +22,6 @@ $_SESSION["numShifts"]=$row["numShifts"];
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,20 +66,20 @@ $_SESSION["numShifts"]=$row["numShifts"];
 				<div id="shiftarea">
 					<!-- Php should make a button for each shift -->
 					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift title</h3>
-						<h3># shifts left</h3>
+						<h3>Shift time | Shift Position</h3>
+						<h3># Postions left</h3>
 					</button>
 					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift title</h3>
-						<h3># shifts left</h3>
+						<h3>Shift time | Shift Position</h3>
+						<h3># Positions left</h3>
 					</button>
 					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift title</h3>
-						<h3># shifts left</h3>
+						<h3>Shift time | Shift Position</h3>
+						<h3># Positions left</h3>
 					</button>
 					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift title</h3>
-						<h3># shifts left</h3>
+						<h3>Shift time | Shift Position</h3>
+						<h3># Position left</h3>
 					</button>
 				</div>
 			</div>
@@ -98,20 +87,20 @@ $_SESSION["numShifts"]=$row["numShifts"];
 				<h2><?php echo "End Date: " ?> <?php echo($_SESSION["endDate"]); ?></h2>
 				<div id="shiftarea">
 					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift title</h3>
-						<h3># shifts left</h3>
+						<h3>Shift time | Shift Position</h3>
+						<h3># Positions left</h3>
 					</button>
 					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift title</h3>
-						<h3># shifts left</h3>
+						<h3>Shift time | Shift Position</h3>
+						<h3># Positions left</h3>
 					</button>
 					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift title</h3>
-						<h3># shifts left</h3>
+						<h3>Shift time | Shift Position</h3>
+						<h3># Positions left</h3>
 					</button>
 					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift title</h3>
-						<h3># shifts left</h3>
+						<h3>Shift time | Shift Position</h3>
+						<h3># Positions left</h3>
 					</button>
 				</div>
 			</div>

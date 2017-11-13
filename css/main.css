@@ -83,6 +83,26 @@ h3i{
 	margin-left: 35px;
 }
 
+#eventOptions {
+	padding-right: 15px;
+	padding-left: 20px;
+}
+
+#deleteEvent {
+	float: right;
+	padding-right: 0.25em;
+}
+
+#eventName {
+	float: left;
+}
+
+#eventData {
+	text-align: left;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
 @media (max-width:49em){
     #left{
         display: none;

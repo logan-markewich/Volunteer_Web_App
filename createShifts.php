@@ -2,7 +2,7 @@
 
 
 session_start(); 
-require('database.php');
+require('./scripts/config/database.php');
 $_GET['id'] = $_SESSION['id'];
 
 $sql = ("SELECT * FROM cmpt370_rdynam.events WHERE idEvent='" . $_GET['id'] . "'");
@@ -62,7 +62,7 @@ $_SESSION["numShifts"]=$row["numShifts"];
 		<div class="row" id="Main">
 			<div class="col-sm-12" id="volInfo">
 			<h1> <?php echo($_SESSION["eventName"]); ?> <?php echo '-- Shift Information' ?> </h1> 
-				<form class="form-horizontal" name="createShift" action="/newShift.php" method="post">
+				<form class="form-horizontal" name="createShift" action="/scripts/create/newShift.php" method="post">
 					<!-- Event Creation Form -->
   					<div class="form-group">
     					<label class="control-label col-sm-2" for="name">Shift Location:</label>
@@ -98,7 +98,7 @@ $_SESSION["numShifts"]=$row["numShifts"];
   					</div>
   					<div class="form-group"> 
     					<div class="col-sm-offset-2 col-sm-10">
-      						<button type="submit" class="btn btn-default" action="/newShift.php" method="post"    >Submit</button>
+      						<button type="submit" class="btn btn-default" action="/scripts/create/newShift.php" method="post"    >Submit</button>
     					</div>
   					</div>
 				</form>

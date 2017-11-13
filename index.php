@@ -65,7 +65,7 @@
   					<button id="accessCodeBtn" type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<!-- Event Manager Login Form -->
-					<form name="login" action="/login.php" onsubmit="return validateForm()" method="post">
+					<form name="login" action="/scripts/config/login.php" onsubmit="return validateForm()" method="post">
 					<h2 id="signInStart">Event Managers</h2>
 					<div class="form-group">
     					<label for="email">Email address:</label>

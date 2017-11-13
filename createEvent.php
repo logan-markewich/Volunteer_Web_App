@@ -1,5 +1,5 @@
 <?php session_start(); 
-require('database.php');?>
+require('./scripts/config/database.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +48,7 @@ require('database.php');?>
 		<!-- Main Content -->
 		<div class="row" id="Main">
 			<div class="col-sm-12" id="volInfo">
-				<form class="form-horizontal" name="createEvent" action="/newEvent.php" method="post">
+				<form class="form-horizontal" name="createEvent" action="/scripts/create/newEvent.php" method="post">
 					<!-- Event Creation Form -->
   					<div class="form-group">
     					<label class="control-label col-sm-2" for="name">Event Name:</label>

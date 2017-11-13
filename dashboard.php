@@ -1,5 +1,5 @@
 <?php session_start(); 
-require('database.php');?>
+require('./scripts/config/database.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

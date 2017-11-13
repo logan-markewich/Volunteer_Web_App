@@ -38,7 +38,7 @@
 		<!-- Main Content -->
 		<div class="row" id="Main">
 			<div class="col-sm-12" id="volInfo">
-				<form class="form-horizontal" name="editEvent" action="/changeEventDates.php" method="post">
+				<form class="form-horizontal" name="editEvent" action="/scripts/edit/changeEventDates.php" method="post">
 					<!-- Event Creation Form -->
   					
 					<div class="form-group">

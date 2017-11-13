@@ -1,5 +1,5 @@
 <?php session_start(); 
-require('database.php');
+require('./scripts/config/database.php');
 $sql = ("SELECT * FROM cmpt370_rdynam.events WHERE idEvent='" . $_GET['id'] . "'");
 $result = mysqli_query($conn, $sql);
 $_SESSION['id'] = $_GET['id'];
@@ -52,60 +52,49 @@ $_SESSION["numShifts"]=$row["numShifts"];
 				</a>
 			</div>
 		</div>
+		
 		<div id="mnu">
 			<?php include('menu2.php'); ?>
 		</div>
+		
 		<div id="Main">
-		<div class="row" id="dashOptions">
-			<div class="col-sm-12">
-				<h1 id="welcome"> <?php echo($_SESSION["eventName"]); ?>  </h1>
-				<button id="editLocationBtn" type="submit" class="btn btn-default" onclick = "location.href='/deleteEvent.php'" > Delete Event </button>
+			<div class="row" id="eventOptions">
+				<div id="eventName">
+					<h1 id="welcome"> <?php echo($_SESSION["eventName"]); ?>  </h1>
+				</div>
+				<div id="deleteEvent">
+					<button id="deleteEventBtn" type="submit" class="btn btn-default" onclick = "location.href='/scripts/edit/deleteEvent.php'" > Delete Event </button>
+				</div>
+			</div>
+			<div class="row" id="dashData">
+				<div>
+					<h2>Event Details:</h2>
+				</div>
+				<div id="edit">
+					<h3i>Location: <?php echo $_SESSION['location']; ?></h3i>
+					<button id="editLocationBtn" type="submit" class="btn btn-default" onclick = "location.href='/editEventLocation.php'" > Edit </button>
+				</div>
+				<div>
+					<h3i>Dates: <?php echo date('F j, Y',strtotime($_SESSION['startDate']))." - ".date('F j, Y',strtotime($_SESSION['endDate'])); ?></h3i>
+					<button id="exitBtn" type="submit" class="btn btn-default" onclick = "location.href='/editEventDates.php'"> Edit </button>
+				</div>
+				<div>
+					<h3i>Number of Shifts: <?php 
+						if ($_SESSION['numShifts'] == NULL){
+							echo "0";
+						}
+						else{
+							echo $_SESSION['numShifts']; 
+						}
+					?></h3i>
+				</div>
 			</div>
 		</div>
 		
-		<div class="row" id="dashData" align="left" style="padding-left:10px">
-			<div class="col-sm-7">
-			<h2> Event Details </h2>
-			<div id="edit">
-			<h3i>Location: <?php echo $_SESSION['location']; ?></h3i>
-			<button id="editLocationBtn" type="submit" class="btn btn-default" onclick = "location.href='/editEventLocation.php'" > Edit </button>
-			</div>
-			<div>
-			<h3i>Dates: <?php echo date('F j, Y',strtotime($_SESSION['startDate']))." - ".date('F j, Y',strtotime($_SESSION['endDate'])); ?></h3i>
-			<button id="exitBtn" type="submit" class="btn btn-default" onclick = "location.href='/editEventDates.php'"> Edit </button>
-			</div>
-			<div>
-			<div>
-			<h3i>Number of Shifts: <?php 
-			if ($_SESSION['numShifts'] == NULL){
-				echo "0";
-			}
-			else{
-				echo $_SESSION['numShifts']; 
-			}
-			?></h3i>
-			</div>
-
-		</div>
-		</div>
-			<div class="col-sm-5">
-			<h2>Shift Information</h2>
-			<div>
-			<button id="editShiftsTypeBtn" type="submit" class="btn btn-default"  > Manage Shift Types/Decriptions </button>
-			</div>
-			
-			<div>
-			<button id="addShiftsBtn" type="submit" class="btn btn-default"  > Add Shifts </button>
-			</div>
-			
-			<div>
-			<button id="editShiftsBtn" type="submit" class="btn btn-default" onclick = "location.href= '/shifts.php'" > Manage Existing Shifts </button>
-			</div>
-		</div>
 			
 		<!-- Footer Information -->
-		</div>
-		</div>
+	
+	
 		<div class="col-sm-12" id="ftr">
         	<center>
         		<div id="mob-social">

@@ -79,7 +79,7 @@ function validateForm() {
 			</div>
   			<div class="col-sm-4">
 				<h1>Sign Up Today!</h1>
-				<form name ="signup" method ="post" action = "newPerson.php" onsubmit="return validateForm()" >
+				<form name ="signup" method ="post" action = "/scripts/create/newPerson.php" onsubmit="return validateForm()" >
 					<div class="form-group">
     					<label for="pwd">First Name:</label>
     					<input type="name" name="firstName" class="form-control" id="firstName">

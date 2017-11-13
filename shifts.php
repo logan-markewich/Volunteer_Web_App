@@ -1,11 +1,7 @@
-
 <?php 
-
-
 session_start(); 
-require('database.php');
+require('./scripts/config/database.php');
 $_GET['id'] = $_SESSION['id'];
-
 $sql = ("SELECT * FROM cmpt370_rdynam.events WHERE idEvent='" . $_GET['id'] . "'");
 $result = mysqli_query($conn, $sql);
 $_SESSION['id'] = $_GET['id'];
@@ -16,8 +12,6 @@ $_SESSION["startDate"]=$row["startDate"];
 $_SESSION["endDate"]=$row["endDate"];
 $_SESSION["numShifts"]=$row["numShifts"];
 }
-
-
 ?>
 
 

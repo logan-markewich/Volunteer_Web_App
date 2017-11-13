@@ -2,8 +2,7 @@
 require('database.php');
 session_start();
 
-$sql = "UPDATE events SET location = '" . $_POST["location"] . "', 
-						startDate = '" . $_POST["startDate"] . "', 
+$sql = "UPDATE events SET startDate = '" . $_POST["startDate"] . "', 
 						endDate = '" . $_POST["endDate"] . "' 
 						where eventName = '" . $_SESSION["eventName"] . "' ";
 

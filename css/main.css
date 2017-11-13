@@ -72,6 +72,17 @@ h3i{
 	padding: 5px 5px 0 5px;
 }
 
+#eventBtns {
+	margin-bottom: 0.25em;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+}
+
+#eventsTitle {
+	text-align: left;
+	margin-left: 35px;
+}
+
 @media (max-width:49em){
     #left{
         display: none;

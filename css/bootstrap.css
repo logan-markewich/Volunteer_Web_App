@@ -769,6 +769,8 @@ pre code {
 .row {
   margin-right: -15px;
   margin-left: -15px;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
 }
 
 .row:before,

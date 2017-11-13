@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require('database.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/menu.css">
 	<link rel="stylesheet" href="/css/hdr_ftr.css" />
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,6 +17,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
+<?php	if($_SESSION["username"] == NULL){
+			header("Location: index.php");
+		}
+		?>
 	
 <body>
 	<!-- Page header: photo and social media -->
@@ -34,6 +40,10 @@
 					<img src="img/tw.png" >
 				</a>
 			</div>
+		</div>
+		
+		<div id="mnu">
+			<?php include('menu.php'); ?>
 		</div>
 		<!-- Main Content -->
 		<div class="row" id="Main">

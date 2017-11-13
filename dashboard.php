@@ -12,7 +12,7 @@ require('database.php');?>
 	<link rel="stylesheet" href="/css/menu.css">
 	<link rel="stylesheet" href="/css/hdr_ftr.css">
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -51,20 +51,26 @@ require('database.php');?>
 		</div>
 		
 		<div class="row" id="dashData">
-			<h2 id="eventsTitle">My Events</h2>
+			<h2 id="eventsTitle">Here's your events:</h2>
 			<div class="col-sm-12">
 				<!-- Display Owned Events -->
-				<h3>
+				<div>
 					<?php 
 						$sql = ("SELECT * FROM cmpt370_rdynam.events WHERE eventCreator='" . $_SESSION["email"] . "'");
 						$result = mysqli_query($conn, $sql);
 						if ($result) {
 							while($row = $result -> fetch_assoc()){
-								echo nl2br ($row['eventName']." \n");
+								echo '<div id="eventBtns">';
+								echo '<a href="eventOverview.php?id='; echo $row['idEvent']; echo '" id="eventBtn" type="button" class="btn btn-primary btn-block">';
+								echo "<h3>";
+								echo nl2br ($row['eventName']);
+								echo "</h3>";
+								echo "</a>";
+								echo "</div>";
 							}
 						}
 					?>
-				</h3>
+				</div>
 			</div>
 		</div>
 		</div>

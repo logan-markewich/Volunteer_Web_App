@@ -10,6 +10,7 @@
 				</ul>
         </li>
 		<li><a href="#">Manage Volunteers</a></li>
+		<li><a href="/scripts/edit/deleteEvent.php">Delete Event</a></li>
 		<li><a href="./scripts/config/logout.php">Logout</a></li>
 
 	</ul>

@@ -48,7 +48,7 @@ require('./scripts/config/database.php');?>
 								echo '<div id="eventBtns">';
 								echo '<a href="eventOverview.php?id='; echo $row['idEvent']; echo '" id="eventBtn" type="button" class="btn btn-primary btn-block">';
 								echo "<h3>";
-								echo nl2br ($row['eventName']);
+								echo nl2br (strtoupper($row['eventName'])." | ".date('M j, Y',strtotime($row['startDate']))." - ".date('M j, Y',strtotime($row['endDate'])));
 								echo "</h3>";
 								echo "</a>";
 								echo "</div>";

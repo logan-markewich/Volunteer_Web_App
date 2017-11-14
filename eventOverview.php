@@ -47,9 +47,6 @@ $_SESSION["numShifts"]=$row["numShifts"];
 				<div id="eventName">
 					<h1 id="welcome"> <?php echo($_SESSION["eventName"]); ?>  </h1>
 				</div>
-				<div id="deleteEvent">
-					<button id="deleteEventBtn" type="submit" class="btn btn-default" onclick = "location.href='/scripts/edit/deleteEvent.php'" > Delete Event </button>
-				</div>
 			</div>
 			<div class="row" id="eventData">
 				<div>

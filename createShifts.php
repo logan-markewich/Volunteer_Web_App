@@ -55,6 +55,12 @@ $_SESSION["numShifts"]=$row["numShifts"];
       						<input type="text" name="location" class="form-control" id="shift_sign_up" placeholder="Shift Location">
     					</div>
   					</div>
+  					<div class="form-group">
+    					<label class="control-label col-sm-2" for="name">Shift Position:</label>
+    					<div class="col-sm-10">
+      						<input type="text" name="position" class="form-control" id="shift_sign_up" placeholder="Shift Position">
+    					</div>
+  					</div>
 					<div class="form-group">
     					<label class="control-label col-sm-2" for="name">Shift Date:</label>
     					<div class="col-sm-10">

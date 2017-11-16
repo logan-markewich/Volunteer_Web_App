@@ -4,13 +4,15 @@ CREATE DEFINER=`cmpt370_rdynam`@`%` PROCEDURE `create_shifts_at_event_table`(
 BEGIN
 	
     SET @createTab=CONCAT("CREATE TABLE ", event_name, "
-    (idShift INT  NOT NULL AUTO_INCREMENT,
-    shiftLocation VARCHAR(100),
+    (idShift SERIAL,
+    shift_location VARCHAR(100),
+    shift_position VARCHAR(100),
     start_Time TIME,
-    end_Time TIMES,
+    end_Time TIME,
     date_Time DATE,
     number_of_volunteers INT,
-    PRIMARY KEY (idShift))
+    number_of_volunteers_in INT,
+    number_of_volunteers_left INT,
     PRIMARY KEY (idShift))
     ");
     

@@ -76,7 +76,7 @@ require('./scripts/config/database.php');
 					$result4 = mysqli_query($conn, $sql4);
 					if ($result4) {
 							while($row3 = $result4 -> fetch_assoc()){ ?>
-								<button id="shiftBtn" type="button" onclick="/shiftEdit.php?id=<?php echo $row3["idShift"];?>" class="btn btn-primary btn-block">
+								<button id="shiftBtn" type="button" onclick="location.href='/shiftEdit.php?id=<?php echo $row3["idShift"];?>'" class="btn btn-primary btn-block">
 								<h3><?php echo $row3["start_Time"] ?> | <?php echo $row3["shift_position"] ?></h3>
 								<h3><?php echo $row3["number_of_volunteers_left"] ?> shifts left</h3>
 								</button> <?php 

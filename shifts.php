@@ -34,54 +34,46 @@ $_SESSION["numShifts"]=$row["numShifts"];
 </head>
 	
 <body>
+	
 	<div class="container-fluid" id="contain">
-		<?php include('hdr.php'); ?>
+		<?php include('hdr.php'); 
+		$table_name = $_SESSION['eventName'];?>
 		<!-- Php should make a row for every two events -->
 		<div id="Main">
+			<div id="mnu">
+				<?php include('menu2.php'); ?>
+			</div>
 		<h1> <?php echo($_SESSION["eventName"]); ?> </h1> 
 		<div class="row" id="shiftRow">
-  			<div class="col-sm-6" id="shifts-left">
+  			<div class="row" id="shifts-left">
 				<h2> <?php echo "Start Date: " ?> <?php echo($_SESSION["startDate"]); ?> </h2>
+				<!-- Display Shifts -->
 				<div id="shiftarea">
-					<!-- Php should make a button for each shift -->
-					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift Position</h3>
-						<h3># Postions left</h3>
-					</button>
-					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift Position</h3>
-						<h3># Positions left</h3>
-					</button>
-					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift Position</h3>
-						<h3># Positions left</h3>
-					</button>
-					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift Position</h3>
-						<h3># Position left</h3>
-					</button>
+				<?php
+					$sql = ("Select * From `" . $table_name ."");
+					$result = mysqli_query($conn, $sql);
+					if($result){
+						while($row = $result -> fetch_assoc()){
+							echo '<div id="eventBtns">';
+								echo '<a href="shiftOverview.php?id='; 
+								echo $row['shift_position']; 
+								echo '" id="eventBtn" type="button" class="btn btn-primary btn-block">';
+								echo "<h3>";
+								echo nl2br (strtoupper($row['start_Time'])." | ".strtoupper($row['shift_position']));
+								echo "</h3>";
+								echo "<h3>";
+								echo nl2br ("Positions left: ". strtoupper($row["number_of_volunteers"]));
+								echo "</h3>";
+								echo "</a>";
+								echo "</div>";
+						}
+					}
+				?>
 				</div>
 			</div>
-			<div class="col-sm-6" id="shifts-right">
+			<div class="row" id="shifts-right">
 				<h2><?php echo "End Date: " ?> <?php echo($_SESSION["endDate"]); ?></h2>
-				<div id="shiftarea">
-					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift Position</h3>
-						<h3># Positions left</h3>
-					</button>
-					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift Position</h3>
-						<h3># Positions left</h3>
-					</button>
-					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift Position</h3>
-						<h3># Positions left</h3>
-					</button>
-					<button id="shiftBtn" type="button" class="btn btn-primary btn-block">
-						<h3>Shift time | Shift Position</h3>
-						<h3># Positions left</h3>
-					</button>
-				</div>
+				
 			</div>
 		</div>
 		</div>

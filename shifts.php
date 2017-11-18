@@ -34,10 +34,11 @@ require('./scripts/config/database.php');
 		$result = mysqli_query($conn, $sql);
 		$sql2 = ("SELECT date_Time FROM ". $table_name ."");
 		$result2 = mysqli_query($conn, $sql2);
-		$count = mysqli_num_rows($result);
+		$count = 0;
 		if ($result2) {
 							while($row = $result2 -> fetch_assoc()){
 								array_push($dates, $row['date_Time']);
+								$count += 1;
 							}
 						}
 		asort($dates);
@@ -49,7 +50,8 @@ require('./scripts/config/database.php');
 		<h1> <?php echo($_SESSION["eventName"]); ?> </h1> 
 		<?php 
 		for ($i = 0; $i < $count; $i+=2){
-			?>
+		?>
+		
 		<div class="row" id="shiftRow">
   			<div class="col-sm-6" id="shifts-left">
 				<h2> <?php echo($dates[0+$i]); ?> </h2>
@@ -65,14 +67,16 @@ require('./scripts/config/database.php');
 								</button> <?php 
 							}
 						} ?>
-					
 				</div>
 			</div>
+			<?php 
+				if($count > ($i + 1)) { 
+			?>
 			<div class="col-sm-6" id="shifts-right">
-				<h2><?php echo($dates[1+$i]); ?></h2>
+				<h2> <?php echo($dates[1+$i]); ?> </h2>
 				<div id="shiftarea">
 					<?php 
-					$sql4 = ("SELECT * FROM ". $table_name ." WHERE date_Time='".$dates[1+$i]."'");
+					$sql4 = ("SELECT * FROM ". $table_name ." WHERE date_Time='" . $dates[1+$i] . "'");
 					$result4 = mysqli_query($conn, $sql4);
 					if ($result4) {
 							while($row3 = $result4 -> fetch_assoc()){ ?>
@@ -81,9 +85,12 @@ require('./scripts/config/database.php');
 								<h3><?php echo $row3["number_of_volunteers_left"] ?> shifts left</h3>
 								</button> <?php 
 							}
-						}?>
+						} ?>
 				</div>
 			</div>
+			<?php 
+				}
+			?>
 		</div>
 		<?php } ?>
 		</div>

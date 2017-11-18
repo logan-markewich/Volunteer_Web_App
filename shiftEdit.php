@@ -5,7 +5,7 @@ $sql = ("SELECT * FROM ".$table_name." WHERE idShift='" . $_GET['id'] . "'");
 $result = mysqli_query($conn, $sql);
 while($row = $result -> fetch_assoc()){
 
-	$_SESSION['shift_name'] = $row['shift_position'];
+	$_SESSION['shift_id'] = $row['idShift'];
 	
 	$name = $row['shift_position'];
 	$loc = $row['shift_location'];

@@ -4,7 +4,7 @@ session_start();
 
 
 
-$sql = "DELETE FROM " .$_SESSION["eventName"] . " WHERE shift_location = " .$_SESSION['shift_name'] . "";
+$sql = "DELETE FROM " .$_SESSION["eventName"] . " WHERE idShift = " .$_SESSION['shift_id'] . "";
 // $sql = "DELETE FROM events WHERE eventName = '" . $_SESSION["eventName"] . "' ";
 
 if (mysqli_query($conn, $sql)) {

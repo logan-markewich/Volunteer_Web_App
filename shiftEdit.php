@@ -4,6 +4,9 @@ $table_name = "cmpt370_rdynam.".$_SESSION['eventName'];
 $sql = ("SELECT * FROM ".$table_name." WHERE idShift='" . $_GET['id'] . "'");
 $result = mysqli_query($conn, $sql);
 while($row = $result -> fetch_assoc()){
+
+	$_SESSION['shift_name'] = $row['shift_position'];
+	
 	$name = $row['shift_position'];
 	$loc = $row['shift_location'];
 	$start = $row['start_Time'];
@@ -37,7 +40,7 @@ while($row = $result -> fetch_assoc()){
 		<?php include('hdr.php'); ?>
 		
 		<div id="mnu">
-			<?php include('menu2.php'); ?>
+			<?php include('menu3.php'); ?>
 		</div>
 		
 		<div class="row" id="Main">

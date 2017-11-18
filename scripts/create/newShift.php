@@ -11,7 +11,7 @@ $sql = "INSERT INTO `" . $table_name ."` (shift_location, shift_position, start_
 VALUES ('" . $_POST["location"] . "', '" . $_POST["position"] . "', '" . $_POST["startTime"] . "', '" . $_POST["endTime"] . "', '" . $_POST['date'] . "','" . $_POST["number_of_vol"] . "')";
 
 if (mysqli_query($conn, $sql)) {
-    header("Location: ../../dashboard.php");
+    header("Location: ../../shifts.php?id=".$_SESSION['id']);
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

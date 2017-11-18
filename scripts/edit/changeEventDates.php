@@ -7,7 +7,7 @@ $sql = "UPDATE events SET startDate = '" . $_POST["startDate"] . "',
 						where eventName = '" . $_SESSION["eventName"] . "' ";
 
 if (mysqli_query($conn, $sql)) {
-    header("Location: ../../dashboard.php");
+    header("Location: ../../eventOverview.php?id=".$_SESSION['id']);
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

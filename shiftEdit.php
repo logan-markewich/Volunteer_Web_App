@@ -57,19 +57,19 @@ while($row = $result -> fetch_assoc()){
 				</div> 
 				<div>
 					<h3i>Start Time: <?php echo $start; ?></h3i>
-					<button id="editStartBtn" type="submit" class="btn btn-default" onclick = "" > Edit </button>
+					<button id="editStartBtn" type="submit" class="btn btn-default" onclick = "location.href='/editShiftTime.php'"> Edit </button>
 				</div>
 				<div>
 					<h3i>End Time: <?php echo $end; ?></h3i>
-					<button id="editEndBtn" type="submit" class="btn btn-default" onclick = "" > Edit </button>
+					<button id="editEndBtn" type="submit" class="btn btn-default" onclick = "location.href='/editShiftTime.php'" > Edit </button>
 				</div>
 				<div>
 					<h3i>Location: <?php echo $loc; ?></h3i>
-					<button id="editLocBtn" type="submit" class="btn btn-default" onclick = "" > Edit </button>
+					<button id="editLocBtn" type="submit" class="btn btn-default" onclick = "location.href='/editShiftLocation.php'" > Edit </button>
 				</div>
 				<div>
 					<h3i>Number of Volunteers Needed: <?php echo $numVol; ?></h3i>
-					<button id="editVolBtn" type="submit" class="btn btn-default" onclick = "" > Edit </button>
+					<button id="editVolBtn" type="submit" class="btn btn-default" onclick = "location.href='/editNumOfPositions.php'" > Edit </button>
 				</div> 
 			</div>
 			

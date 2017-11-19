@@ -6,7 +6,7 @@
 		<li><a href="eventOverview.php?id=<?php echo $_SESSION['id'];?>"><?php echo $_SESSION['eventName'];?></a></li>
         <li><a href="#">Manage Shifts</a><b aria-haspopup="true" aria-controls="p1"></b>
         	<ul id="p1">
-				<li><a href="#"> Shift Types/Descriptions</a></li>
+				<li><a href="shiftTypes.php"> Shift Types/Descriptions</a></li>
 				<li><a href="createShifts.php"> Add Shifts</a></li>
 				<li><a href="shifts.php?id=<?php echo $_SESSION['id'];?>"> Manage Existing Shifts</a></li>
 				</ul>

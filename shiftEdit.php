@@ -50,9 +50,15 @@ while($row = $result -> fetch_assoc()){
 					<h3i>Title: </h3i>
 					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="selected"><?php echo $name; ?></span><span class="caret"></span></button>
   					<ul class="dropdown-menu">
-    					<li><a href="#">Populate</a></li>
-    					<li><a href="#">With</a></li>
-    					<li><a href="#">Stuff</a></li>
+    					<?php 
+						$sql2 = ("SELECT * FROM cmpt370_rdynam.shift_descriptions WHERE eventName='" . $_SESSION['eventName'] . "'");
+						$result2 = mysqli_query($conn, $sql2);
+						
+						while($row2 = $result2 -> fetch_assoc()){
+
+								?><li><a href="#"><?php echo $row2['shiftType']; ?></a></li><?php
+	
+						} ?>
   					</ul>
 				</div> 
 				<div>
@@ -74,7 +80,14 @@ while($row = $result -> fetch_assoc()){
 			</div>
 			
 			<div class="col-sm-6" id="volInfo">
-				<h1> Shift Type Description Goes Here, matches descripton from dropdown box </h1>
+				<h1> Shift Description </h1>
+				<?php $sql3 = ("SELECT shiftDescription FROM cmpt370_rdynam.shift_descriptions WHERE shiftType='" . $_GET['type'] . "'");
+										$result3 = mysqli_query($conn, $sql3);
+
+										while($row3 = $result3 -> fetch_assoc()){
+											echo $row3['shiftDescription'];
+										} 
+										 ?>
 			</div>
 		</div>
 		

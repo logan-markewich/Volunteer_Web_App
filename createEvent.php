@@ -1,5 +1,7 @@
-<?php session_start(); 
-require('./scripts/config/database.php');?>
+<?php 
+	session_start(); 
+	require('./scripts/config/database.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

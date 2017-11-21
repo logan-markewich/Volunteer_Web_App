@@ -28,6 +28,16 @@
 	}
 </script>
 
+	<script>
+	function validateCode() {
+		var x = document.forms["access"]["accessCode"].value;
+		if (x < 0 || x > 9999) {
+			alert("Invalid Code");
+			return false;
+		}
+	}
+</script>
+
 </head>
 	
 <body>
@@ -43,6 +53,7 @@
   			<div class="col-sm-4">
 				<form>
 					<!-- Volunteer Login Form -->
+					<form name="access" action="/scripts/config/redirect.php" onsubmit="return validateCode()" method="post">
 					<h2>Volunteers</h2>
   					<div class="form-group">
     					<label for="accessCode">Access Code:</label>

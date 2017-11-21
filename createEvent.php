@@ -1,5 +1,6 @@
 <?php 
 	session_start(); 
+	$accessCode = rand(0001, 9999);
 	require('./scripts/config/database.php');
 ?>
 <!DOCTYPE html>
@@ -19,7 +20,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-$accessCode = rand(0001, 9999);
 <?php	if($_SESSION["username"] == NULL){
 			header("Location: index.php");
 		}
@@ -65,7 +65,7 @@ $accessCode = rand(0001, 9999);
   					</div>
   					<div class="form-group"> 
     					<div class="col-sm-offset-2 col-sm-10">
-							<input type="hidden" name="accessCode" value="<?php echo $accessCode ?>" />
+							<input type="hidden" name="accessCode" value="<?php echo $accessCode ?>">
       						<button type="submit" class="btn btn-default">Submit</button>
     					</div>
   					</div>

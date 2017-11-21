@@ -51,9 +51,8 @@
 				<img class="img-responsive" src="img/austin.jpg" id="left">
 			</div>
   			<div class="col-sm-4">
-				<form>
 					<!-- Volunteer Login Form -->
-					<form name="access" action="/scripts/config/redirect.php" onsubmit="return validateCode()" method="post">
+					<form name="access" action="/scripts/config/checkCode.php" onsubmit="return validateCode()" method="post">
 					<h2>Volunteers</h2>
   					<div class="form-group">
     					<label for="accessCode">Access Code:</label>
@@ -81,7 +80,7 @@
 					<form>
 					<h3>Don't have an account?</h3>
 					<a id="signUpBtn" type="submit" class="btn btn-default" href="/signUp.php">Sign up now!</a>
-				</form>
+					</form>
 			</div>
 			<div class="col-sm-4" id="img-Right">
 				<img class="img-responsive" src="img/percy.jpg" id="right">

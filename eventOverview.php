@@ -10,6 +10,7 @@
 		$_SESSION["startDate"]=$row["startDate"];
 		$_SESSION["endDate"]=$row["endDate"];
 		$_SESSION["numShifts"]=$row["numShifts"];
+		$_SESSION["accessCode"]=$row["accessCode"];
 	}
 ?>
 
@@ -70,6 +71,9 @@
 							echo $_SESSION['numShifts']; 
 						}
 					?></h3i>
+				</div>
+				<div>
+					<h3i>Access Code: <?php echo $_SESSION['accessCode']; ?></h3i>
 				</div>
 			</div>
 		</div>

@@ -56,7 +56,7 @@
 					<h2>Volunteers</h2>
   					<div class="form-group">
     					<label for="accessCode">Access Code:</label>
-    					<input type="name" class="form-control" id="accessCode">
+    					<input type="name" class="form-control" id="accessCode" name="accessCode">
   					</div>
   					<button id="accessCodeBtn" type="submit" class="btn btn-default">Submit</button>
 					</form>

@@ -25,10 +25,18 @@ require('./scripts/config/database.php');
 	
 	<div class="container-fluid" id="contain">
 		<?php include('hdr.php'); ?>
-		<div id="mnu">
-				<?php include('menu2.php'); ?>
-		</div>
-		<?php $table_name = "cmpt370_rdynam.".$_SESSION['eventName'];
+		<?php 
+		$sql7 = ("SELECT * FROM cmpt370_rdynam.events WHERE idEvent='" . $_GET['id'] . "'");
+		$result7 = mysqli_query($conn, $sql7);
+		if ($result7) {
+							while($row7 = $result7 -> fetch_assoc()){
+								$_SESSION['eventName'] = $row7['eventName'];
+								
+								
+							}
+						}
+		
+		$table_name = "cmpt370_rdynam.".$_SESSION['eventName'];
 		$dates = array();
 		$sql = ("SELECT count( DISTINCT(date_Time) ) FROM ". $table_name ."");
 		$result = mysqli_query($conn, $sql);
@@ -61,7 +69,7 @@ require('./scripts/config/database.php');
 					$result3 = mysqli_query($conn, $sql3);
 					if ($result3) {
 							while($row2 = $result3 -> fetch_assoc()){ ?>
-								<button id="shiftBtn" type="button" onclick="location.href='/shiftEdit.php?id=<?php echo $row2["idShift"];?>&type=<?php echo $row2['shift_position'];?>'" class="btn btn-primary btn-block">
+								<button id="shiftBtn" type="button" onclick="" class="btn btn-primary btn-block">
 								<h3><?php echo date('g:i A',strtotime($row2["start_Time"])) ?> | <?php echo $row2['shift_position'] ?></h3>
 								<h3><?php echo $row2['number_of_volunteers_left'] ?> shifts left</h3>
 								</button> <?php 
@@ -80,7 +88,7 @@ require('./scripts/config/database.php');
 					$result4 = mysqli_query($conn, $sql4);
 					if ($result4) {
 							while($row3 = $result4 -> fetch_assoc()){ ?>
-								<button id="shiftBtn" type="button" onclick="location.href='/shiftEdit.php?id=<?php echo $row3["idShift"];?>'" class="btn btn-primary btn-block">
+								<button id="shiftBtn" type="button" onclick="" class="btn btn-primary btn-block">
 								<h3><?php echo date('g:i A',strtotime($row3["start_Time"])) ?> | <?php echo $row3["shift_position"] ?></h3>
 								<h3><?php echo $row3["number_of_volunteers_left"] ?> shifts left</h3>
 								</button> <?php 

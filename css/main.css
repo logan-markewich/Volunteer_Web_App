@@ -1,0 +1,113 @@
+body, html{
+   height: 100%;
+   padding: 0;
+}
+
+#contain {
+	background-color: #D46527;
+	height: inherit;
+}
+
+#Main {
+	margin: 1em 1em 1em 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+    text-align: center;
+	align-content: center;
+	background-color: #fff;
+}
+
+#welcome {
+	text-align: left;
+	margin-left: 0.5em;
+	margin-top: -0.25em;
+}
+
+#dashOptions button {
+	width: 10em;
+	font-size: 1.25em;
+}
+
+#left {
+	margin: 0 auto;
+}
+
+#right {
+	margin: 0 auto;
+}
+
+input {
+	text-align: center;
+}
+
+#signInStart {
+	margin-top: 2em;
+}
+
+#description {
+	text-align: left;
+}
+
+#volInfo {
+	align-content: left;
+}
+
+#volInfo input, label {
+	margin-bottom: 1em;
+}
+
+#edit {
+	display:inline;
+}
+
+h3i{
+	font-size: 24px;
+	display:linline;
+}
+
+#mnu {
+	width: 100%;
+	background-color: #09476C;
+	margin-top:8px;
+	padding: 5px 5px 0 5px;
+}
+
+#eventBtns {
+	margin-bottom: 0.25em;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+}
+
+#eventsTitle {
+	text-align: left;
+	margin-left: 35px;
+}
+
+#eventOptions {
+	padding-right: 15px;
+	padding-left: 20px;
+}
+
+#deleteEvent {
+	float: right;
+	padding-right: 0.25em;
+}
+
+#eventName {
+	float: left;
+}
+
+#eventData {
+	text-align: left;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+@media (max-width:49em){
+    #left{
+        display: none;
+    }
+	#right{
+		display: none;
+	}
+}

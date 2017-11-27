@@ -2,11 +2,11 @@
 require('../config/database.php');
 session_start();
 
-
+$table_name = str_replace(' ', '', $_SESSION["eventName"]);
 
 $sql = "UPDATE 
 		
-		". $_SESSION["eventName"] ."
+		". $table_name ."
 		
 		SET number_of_volunteers = '" . $_POST["numOfPostions"] . " '
 						

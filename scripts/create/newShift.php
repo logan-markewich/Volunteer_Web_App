@@ -2,12 +2,12 @@
 require('../config/database.php');
 session_start();
 
-$table_name = $_SESSION['eventName'];
+$table_name = str_replace(' ', '', $_SESSION["eventName"]);
 echo $table_name;
 
 
 
-$sql = "INSERT INTO `" . $table_name ."` (shift_location, shift_position, start_Time, end_Time, date_Time, number_of_volunteers, number_of_volunteers_in, number_of_volunteers_left)
+$sql = "INSERT INTO `". $table_name ."` (shift_location, shift_position, start_Time, end_Time, date_Time, number_of_volunteers, number_of_volunteers_in, number_of_volunteers_left)
 VALUES ('" . $_POST["location"] . "', '" . $_POST["position"] . "', '" . $_POST["startTime"] . "', '" . $_POST["endTime"] . "', '" . $_POST['date'] . "','" . $_POST["number_of_vol"] . "', 
 0, '" . $_POST["number_of_vol"] . "' )";
 

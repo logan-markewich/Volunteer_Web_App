@@ -2,6 +2,9 @@
 require('../config/database.php');
 session_start();
 
+$table_name = str_replace(' ', '', $_SESSION["eventName"]);
+echo $table_name;
+
 $sql = "UPDATE". $table_name." SET shift_position = '" . $_POST["changeName"] . "' 
 						where idShift = '" . $GET['id'] . "' ";
 

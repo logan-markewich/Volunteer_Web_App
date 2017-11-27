@@ -36,7 +36,7 @@ require('./scripts/config/database.php');
 							}
 						}
 		
-		$table_name = "cmpt370_rdynam.".$_SESSION['eventName'];
+		$table_name = str_replace(' ', '', "cmpt370_rdynam.".$_SESSION['eventName']);
 		$dates = array();
 		$sql = ("SELECT count( DISTINCT(date_Time) ) FROM ". $table_name ."");
 		$result = mysqli_query($conn, $sql);

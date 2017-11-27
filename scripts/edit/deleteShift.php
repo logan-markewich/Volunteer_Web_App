@@ -2,10 +2,11 @@
 require('../config/database.php');
 session_start();
 
-
+$table_name = str_replace(' ', '', $_SESSION["eventName"]);
+echo $table_name;
 
 $sql = "DELETE FROM " 
-		. $_SESSION["eventName"] 
+		. $table_name 
 		. " WHERE idShift = " .$_SESSION['shift_id'] . "";
 			 
 			 

@@ -61,11 +61,11 @@
 					</span><span class="caret"></span></button>
   					<ul class="dropdown-menu">
     					<?php 
-						$sql3 = ("SELECT shiftType FROM cmpt370_rdynam.shift_descriptions WHERE eventName='" . $_SESSION['eventName'] . "'");
-							$result3 = mysqli_query($conn, $sql3);
-						while($row3 = $result3 -> fetch_assoc()){
+						$sql3 = ("SELECT shiftType FROM cmpt370_rdynam.shift_descriptions WHERE idShiftDescrip='" . $_GET['id'] . "'");
+						$result3 = mysqli_query($conn, $sql3);
+						while($row = $result -> fetch_assoc()){
 						
-								?><li><a href="#"><?php echo $row3['shiftType']; ?></a></li><?php
+							?><li><a href="shiftTypes.php?id=<?php echo $row['idShiftDescrip'];?>"><?php echo $row['shiftType']; ?></a></li><?php
 											
 						} ?>
   					</ul>

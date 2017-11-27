@@ -1,6 +1,6 @@
 <?php session_start(); 
 require('./scripts/config/database.php');
-$table_name = "cmpt370_rdynam.".$_SESSION['eventName'];
+$table_name = str_replace(' ', '', "cmpt370_rdynam.".$_SESSION['eventName']);
 $sql = ("SELECT * FROM ".$table_name." WHERE idShift='" . $_GET['id'] . "'");
 $result = mysqli_query($conn, $sql);
 while($row = $result -> fetch_assoc()){

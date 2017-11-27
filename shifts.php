@@ -28,7 +28,8 @@ require('./scripts/config/database.php');
 		<div id="mnu">
 				<?php include('menu2.php'); ?>
 		</div>
-		<?php $table_name = "cmpt370_rdynam.".$_SESSION['eventName'];
+		<?php
+		$table_name = str_replace(' ', '', $_SESSION["eventName"]);
 		$dates = array();
 		$sql = ("SELECT count( DISTINCT(date_Time) ) FROM ". $table_name ."");
 		$result = mysqli_query($conn, $sql);

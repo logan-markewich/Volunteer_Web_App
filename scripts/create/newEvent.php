@@ -2,6 +2,8 @@
 require('../config/database.php');
 session_start();
 
+$eventNameNoSpaces = str_replace(' ', '', $_POST["eventName"]);
+
 $sql = "INSERT INTO events (eventName, eventCreator, startDate, endDate, location, numShifts, accessCode)
 VALUES ('" . $_POST["eventName"] . "','" . $_SESSION['email'] . "', '" . $_POST["startDate"] . "', '" . $_POST["endDate"] . "', '" . $_POST["location"] . "', '" . $_POST["0"] . "', '" . $_POST["accessCode"] . "')";
 
@@ -18,7 +20,9 @@ mysqli_close($conn);
 require('../config/database.php');
 session_start();
 
-$sql = "CALL create_shifts_at_event_table('" . $_POST["eventName"] . "')";
+$eventNameNoSpaces = str_replace(' ', '', $_POST["eventName"]);
+
+$sql = "CALL create_shifts_at_event_table('$eventNameNoSpaces')";
 
 if (mysqli_query($conn, $sql)) {
     header("Location: ../../dashboard.php");
@@ -27,13 +31,6 @@ if (mysqli_query($conn, $sql)) {
 }
 
 mysqli_close($conn);
-
-
-
-
-
-
-
 
 
 ?> 

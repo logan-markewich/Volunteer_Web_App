@@ -2,7 +2,7 @@
 require('../config/database.php');
 session_start();
 
-$table_name = $_SESSION['eventName'];
+$table_name = str_replace(' ', '', $_SESSION["eventName"]);
 echo $table_name;
 
 

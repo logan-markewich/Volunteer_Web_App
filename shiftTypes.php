@@ -73,7 +73,7 @@ $sdescrip = "";
   					</div>        
   				
   					<div class="form-group"> 
-    					<div class="col-sm-offset-2 col-sm-10">
+    					<div class="col-sm-12">
       						<button type="submit" class="btn btn-default">Add</button>
     					</div>
   					</div>
@@ -83,44 +83,42 @@ $sdescrip = "";
 			</div>
 			
 			<div class="col-sm-6" id="volInfo">
-				<h1> Shift Type Description </h1>
-				<?php $sql2 = ("SELECT shiftDescription FROM cmpt370_rdynam.shift_descriptions WHERE idShiftDescrip='" . $_GET['id'] . "'");
-										$result2 = mysqli_query($conn, $sql2);
+				<?php 
+					if (!empty($_GET)){
+						$sql2 = ("SELECT shiftDescription FROM cmpt370_rdynam.shift_descriptions WHERE idShiftDescrip='" . $_GET['id'] . "'");
+						$result2 = mysqli_query($conn, $sql2);
 
-										while($row2 = $result2 -> fetch_assoc()){
-											$sdescrip = $row2['shiftDescription'];
-										} 
-										 ?>
+						while($row2 = $result2 -> fetch_assoc()){
+							$sdescrip = $row2['shiftDescription'];
+						}
+				}
+				?>
+				<h1> Shift Type Description </h1>
 				<form class="form-horizontal" name="editDescrip" action="/scripts/edit/changeShiftDescrip.php" method="post">
-					<!-- Event Creation Form -->
-  					
 					<div class="form-group">
     					<div class="col-sm-12">
       						<input type="text" name="description" class="form-control" id="shift_sign_up" value="<?php echo $sdescrip; ?>" >
+							<input type="hidden" name="shiftID" class="form-control" value="<?php echo $_GET['id']; ?>"
     					</div>
   					</div>        
   				
   					<div class="form-group"> 
-    					<div class="col-sm-offset-2 col-sm-10">
+    					<div class="col-sm-12">
       						<button type="submit" class="btn btn-default">Submit</button>
     					</div>
   					</div>
-				</form>
-			
-					
+				</form>	
 			</div>
 		</div>
 		
-		
-		
-<script>	
-$('.dropdown li').click(function(){
-    $('#selected').text($(this).text());
-  });			
-</script>
+		<script>	
+			$('.dropdown li').click(function(){
+    			$('#selected').text($(this).text());
+  			});			
+		</script>
+		<div>	
+			<?php include('ftr.php'); ?>
 		</div>
-		
-		<?php include('ftr.php'); ?>
 	</div>
 </body>
 </html>

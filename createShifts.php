@@ -55,7 +55,7 @@ $_SESSION["numShifts"]=$row["numShifts"];
     					<label class="control-label col-sm-2" for="name">Shift Position:</label>
     					<div class="col-sm-10">
       						<div class="dropdown">
-							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="selected">Select Type
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" name="position"><span id="selected">Select Type
 							</span><span class="caret"></span></button>
   							<ul class="dropdown-menu">
     						<?php 

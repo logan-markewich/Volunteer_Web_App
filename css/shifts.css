@@ -16,6 +16,10 @@
 	text-align: center;
 }
 
+#Main {
+	text-align: center;
+}
+
 @media (max-width:49em) {
 	#shiftBtn h3 {
 		font-size: 15pt;

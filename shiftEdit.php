@@ -46,21 +46,33 @@ while($row = $result -> fetch_assoc()){
 		<div class="row" id="Main">
 
 			<div class="col-sm-6" id="shiftEditInfo">
-				<div class="dropdown">
-					<h3i>Title: </h3i>
-					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="selected"><?php echo $name; ?></span><span class="caret"></span></button>
-  					<ul class="dropdown-menu">
-    					<?php 
-						$sql2 = ("SELECT * FROM cmpt370_rdynam.shift_descriptions WHERE eventName='" . $_SESSION['eventName'] . "'");
-						$result2 = mysqli_query($conn, $sql2);
+				<form class="form-horizontal" name="positionForm" action="/scripts/edit/changeShiftName.php" method="post">
+					<div class="form-group" name="positionForm">
+						<h3i>Title: </h3i>
+						<div>
+							<input type="hidden" name="position" id="position">
+							<div class="dropdown">
+								<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="selected"><?php echo $name ?></span><span class="caret"></span></button>
+  								<ul class="dropdown-menu">
+    							<?php 
+									$sql2 = ("SELECT * FROM cmpt370_rdynam.shift_descriptions WHERE eventName='" . $_SESSION['eventName'] . "'");
+									$result2 = mysqli_query($conn, $sql2);
 						
-						while($row2 = $result2 -> fetch_assoc()){
+									while($row2 = $result2 -> fetch_assoc()){
 
-								?><li><a href="#"><?php echo $row2['shiftType']; ?></a></li><?php
+									?><li><a href="#"><?php echo $row2['shiftType']; ?></a></li><?php
 	
-						} ?>
-  					</ul>
-				</div> 
+									} ?>
+  								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div>
+							<button type="submit" class="btn btn-default" action="/scripts/edit/changeShiftName.php" method="post">Change</button>
+						</div>
+					</div>
+				</form>
 				<div>
 					<h3i>Start Time: <?php echo $start; ?></h3i>
 					<button id="editStartBtn" type="submit" class="btn btn-default" onclick = "location.href='/editShiftTime.php'"> Edit </button>
@@ -130,6 +142,8 @@ window.onclick = function(event) {
 <script>	
 $('.dropdown li').click(function(){
     $('#selected').text($(this).text());
+	$('#position').val($(this).text());
+    $('#positionForm').submit();
   });			
 </script>
 		</div>

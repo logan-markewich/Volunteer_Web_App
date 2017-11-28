@@ -81,7 +81,7 @@ while($row = $result -> fetch_assoc()){
 			
 			<div class="col-sm-6" id="volInfo">
 				<h1> Shift Description </h1>
-				<?php $sql3 = ("SELECT shiftDescription FROM cmpt370_rdynam.shift_descriptions WHERE shiftType='" . $_GET['type'] . "'");
+				<?php $sql3 = ("SELECT shiftDescription FROM cmpt370_rdynam.shift_descriptions WHERE shiftType='" . $name . "'");
 										$result3 = mysqli_query($conn, $sql3);
 
 										while($row3 = $result3 -> fetch_assoc()){

@@ -1,24 +1,18 @@
-<!-- 
-<?php session_start(); 
+<?php 
+session_start(); 
 require('./scripts/config/database.php');
-$sql = ("SELECT * FROM cmpt370_rdynam.shift_types");
+$_GET['id'] = $_SESSION['id'];
+$sql = ("SELECT * FROM cmpt370_rdynam.events WHERE idEvent='" . $_GET['id'] . "'");
 $result = mysqli_query($conn, $sql);
-$types = array();
-
-
-// $sdescrip = "";
-
-// while($row = $result -> fetch_assoc()){
-// 
-// 	$types[$i] = $row['type'];
-// 	
-// 	echo $types[$i];
-// 	}
-// 	
-// 
-// exit;
+$_SESSION['id'] = $_GET['id'];
+while($row = $result -> fetch_assoc()){
+$_SESSION["eventName"]=$row["eventName"];
+$_SESSION["location"]=$row["location"];
+$_SESSION["startDate"]=$row["startDate"];
+$_SESSION["endDate"]=$row["endDate"];
+$_SESSION["numShifts"]=$row["numShifts"];
+}
 ?>
- -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +27,7 @@ $types = array();
 	<link rel="stylesheet" href="/css/hdr_ftr.css" />
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
@@ -43,65 +37,45 @@ $types = array();
 	<div class="container-fluid" id="contain">
 		<?php include('hdr.php'); ?>
 		<div id="mnu">
-			<?php include('scripts/menus/menu2.php'); ?>
+			<?php include('menu2.php'); ?>
 		</div>
-		
 		<!-- Main Content -->
 		<div class="row" id="Main">
 			<div class="col-sm-12" id="volInfo">
-			
 			<h1> <?php echo($_SESSION["eventName"]); ?> <?php echo '-- Shift Information' ?> </h1> 
 				<form class="form-horizontal" name="createShift" action="/scripts/create/newShift.php" method="post">
 					<!-- Event Creation Form -->
-					
-<!-- &&&&&&&					 -->
-					<div class="dropdown_container" >
-					
-    					<label for = "select"> Select Shift Types (select one): </label>
-    					
-    					<select class="form-control" name ="shiftType" >
-    					
-    					<?php 
-						$sql = ("SELECT * FROM cmpt370_rdynam.shift_types ");
-						$result = mysqli_query($conn, $sql);
-						if ($result) {
-							while($row = $result -> fetch_assoc()){
-								echo "<option type = '".$row['type']."'> ".$row['type']."  </option>";
-							}
-						}
-						?>
-    					
-    			
- 						 </select>
-    					
-    	
-					
-    					
-    					
-    					</div>
-				  </div> 
-    					
-<!--   &&&&&					 -->
-
-					
-					
   					<div class="form-group">
-  					
     					<label class="control-label col-sm-2" for="name">Shift Location:</label>
     					<div class="col-sm-10">
       						<input type="text" name="location" class="form-control" id="shift_sign_up" placeholder="Shift Location">
     					</div>
-    				
   					</div>
-  					
-  					
+  					<div class="form-group">
+    					<label class="control-label col-sm-2" for="name">Shift Position:</label>
+    					<div class="col-sm-10">
+      						<div class="dropdown">
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="selected">Select Type
+							</span><span class="caret"></span></button>
+  							<ul class="dropdown-menu">
+    						<?php 
+							$sql3 = ("SELECT shiftType FROM shift_descriptions WHERE eventName='" . $_SESSION['eventName'] . "'");
+							$result3 = mysqli_query($conn, $sql3);
+							while($row3 = $result3 -> fetch_assoc()){
+						
+								?><li><a href="#"><?php echo $row3['shiftType']; ?></a></li><?php
+											
+							} ?>
+  							</ul>
+							</div> 
+    					</div>
+  					</div>
 					<div class="form-group">
     					<label class="control-label col-sm-2" for="name">Shift Date:</label>
     					<div class="col-sm-10">
       						<input type="date" name="date" class="form-control" id="shift_sign_up" placeholder="17/11/30 for November 30, 2017">
     					</div>
   					</div>
-  					
 					<div class="form-group">
     					<label class="control-label col-sm-2" for="date">Start Time:</label>
     					<div class="col-sm-10">
@@ -122,7 +96,6 @@ $types = array();
       						<input type="integer" name="number_of_vol" class="form-control" id="shift_sign_up" placeholder="Number Of Volunteers">
     					</div>
   					</div>
-  					
   					<div class="form-group"> 
     					<div class="col-sm-offset-2 col-sm-10">
       						<button type="submit" class="btn btn-default" action="/scripts/create/newShift.php" method="post"    >Submit</button>
@@ -131,6 +104,11 @@ $types = array();
 				</form>
 
 			</div>
+		<script>	
+			$('.dropdown li').click(function(){
+    			$('#selected').text($(this).text());
+  			});			
+		</script>
 		</div>
 		<!-- Footer Information -->
 		<?php include('ftr.php'); ?>

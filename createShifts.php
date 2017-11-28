@@ -51,11 +51,12 @@ $_SESSION["numShifts"]=$row["numShifts"];
       						<input type="text" name="location" class="form-control" id="shift_sign_up" placeholder="Shift Location">
     					</div>
   					</div>
-  					<div class="form-group">
-    					<label class="control-label col-sm-2" for="name">Shift Position:</label>
+  					<div class="form-group" id="positionForm">
+    					<label class="control-label col-sm-2" for="position">Shift Position:</label>
     					<div class="col-sm-10">
+							<input type="hidden" name="position" id="position">
       						<div class="dropdown">
-							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" name="position"><span id="selected">Select Type
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="selected">Select Type
 							</span><span class="caret"></span></button>
   							<ul class="dropdown-menu">
     						<?php 
@@ -63,11 +64,11 @@ $_SESSION["numShifts"]=$row["numShifts"];
 							$result3 = mysqli_query($conn, $sql3);
 							while($row3 = $result3 -> fetch_assoc()){
 						
-								?><li><a href="#"><?php echo $row3['shiftType']; ?></a></li><?php
+								?><li><?php echo $row3['shiftType']; ?></li><?php
 											
 							} ?>
   							</ul>
-							</div> 
+							</div>
     					</div>
   					</div>
 					<div class="form-group">
@@ -107,6 +108,8 @@ $_SESSION["numShifts"]=$row["numShifts"];
 		<script>	
 			$('.dropdown li').click(function(){
     			$('#selected').text($(this).text());
+				$('#position').val($(this).text());
+                $('#positionForm').submit();
   			});			
 		</script>
 		</div>

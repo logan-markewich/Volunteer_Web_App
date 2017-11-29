@@ -103,6 +103,11 @@ h3i{
 	padding-right: 30px;
 }
 
+#signUpArea {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
 @media (max-width:49em){
     #left{
         display: none;

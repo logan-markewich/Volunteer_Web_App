@@ -71,7 +71,7 @@ require('./scripts/config/database.php');
 					$first = 0;
 					}
 			?>
-							<button id="shiftBtn" type="button" onclick="" class="btn btn-primary btn-block">
+							<button id="shiftBtn" type="button" onclick="location.href='/volunteerShift.php?id=<?php echo $rowValue["idShift"];?>&type=<?php echo $rowValue['shift_position'];?>'" class="btn btn-primary btn-block">
 							<h3><?php echo date('g:i A',strtotime($rowValue["start_Time"])) ?> | <?php echo $rowValue['shift_position'] ?></h3>
 							<h3><?php echo $rowValue['number_of_volunteers_left'] ?> shifts left</h3>
 							</button> 

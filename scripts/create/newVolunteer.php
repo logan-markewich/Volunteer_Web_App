@@ -9,13 +9,7 @@ $sql1 = "insert into volunteers (firstName, lastName, email, phoneNumber, idShif
 if (mysqli_query($conn, $sql1)) {
 	$sql2 = "update ". $eventNameNoSpaces ." set number_of_volunteers_in = number_of_volunteers_in + 1, number_of_volunteers_left = number_of_volunteers_left - 1 where idShift = ". $_POST["shiftId"] ."";
 		if (mysqli_query($conn, $sql2)) {
-			$sql3 = "update events set numShifts = numShifts + 1 where eventName = '". $_SESSION['eventName'] ."'";
-			if (mysqli_query($conn, $sql3)) {
-				header("Location: ../../dashboard.php");
-			}
-			else {
-				echo "Error: " . $sql3 . "<br>" . mysqli_error($conn);
-			}
+			header("Location: ../../dashboard.php");
 		}
 		else {
 			echo "Error: " . $sql2 . "<br>" . mysqli_error($conn);

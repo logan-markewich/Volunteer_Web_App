@@ -14,13 +14,7 @@ VALUES ('" . $_POST["location"] . "',  '" . $_POST["position"] . "', '" . $_POST
 
 
 if (mysqli_query($conn, $sql)) {
-    $sql3 = "update events set numShifts = numShifts + 1 where eventName = '". $_SESSION['eventName'] ."'";
-	if (mysqli_query($conn, $sql3)) {
-		header("Location: ../../dashboard.php");
-	}
-	else {
-	    echo "Error: " . $sql3 . "<br>" . mysqli_error($conn);
-	}
+    header("Location: ../../dashboard.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

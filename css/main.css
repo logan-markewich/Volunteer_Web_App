@@ -108,6 +108,10 @@ h3i{
 	padding-right: 40px;
 }
 
+#volTable {
+	text-align: left;
+}
+
 @media (max-width:49em){
     #left{
         display: none;

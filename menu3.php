@@ -11,7 +11,7 @@
 				<li><a href="shifts.php?id=<?php echo $_SESSION['id'];?>"> Manage Existing Shifts</a></li>
 				</ul>
         </li>
-		<li><a href="#">Manage Volunteers</a></li>
+		<li><a href="manageVolunteers.php">Manage Volunteers</a></li>
 		<li><a href="/scripts/edit/deleteShift.php" onclick="return confirm('Are you sure you want to delete this Shift? ');">Delete Shift</a></li>
 		<li><a href="/scripts/config/logout.php">Logout</a></li>
 

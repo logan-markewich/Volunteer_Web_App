@@ -97,7 +97,7 @@ function validateForm() {
 			</div>
 		</div>
 		<!-- Footer Information -->
-		<?php include('hdr.php'); ?>
+		<?php include('ftr.php'); ?>
 	</div>
 
 </body>

@@ -19,35 +19,33 @@
 </head>
 	
 <body>
-	<!-- Page header: photo and social media -->
 	<div class="container-fluid" id="contain">
+		<!-- Page header: photo and social media -->
 		<?php include('hdr.php'); ?>
+		
 		<!-- Main Content -->
 		<div class="row" id="Main">
 			<div class="col-sm-12" id="volInfo">
 				<form class="form-horizontal" name="editEvent" action="/scripts/edit/changeEventDates.php" method="post">
-					<!-- Event Creation Form -->
-  					
+					<!-- Event Creation Form -->				
 					<div class="form-group">
-    					<label class="control-label col-sm-2" for="date">Change Start Date:</label>
-    					<div class="col-sm-10">
-      						<input type="date" name="startDate" class="form-control" id="shift_sign_up" placeholder="17/11/30 for November 30, 2017">
-    					</div>
-  					</div>        
-  					
+    						<label class="control-label col-sm-2" for="date">Change Start Date:</label>
+    						<div class="col-sm-10">
+      							<input type="date" name="startDate" class="form-control" id="shift_sign_up" placeholder="17/11/30 for November 30, 2017">
+    						</div>
+  					</div>        			
 					<div class="form-group">
-    					<label class="control-label col-sm-2" for="date">Change End Date:</label>
-    					<div class="col-sm-10">
-      						<input type="date" name="endDate" class="form-control" id="shift_sign_up" placeholder="17/12/03 for December 3, 2017">
-    					</div>
+    						<label class="control-label col-sm-2" for="date">Change End Date:</label>
+    						<div class="col-sm-10">
+      							<input type="date" name="endDate" class="form-control" id="shift_sign_up" placeholder="17/12/03 for December 3, 2017">
+    						</div>
   					</div>
   					<div class="form-group"> 
-    					<div class="col-sm-offset-2 col-sm-10">
-      						<button type="submit" class="btn btn-default">Submit</button>
-    					</div>
+    						<div class="col-sm-offset-2 col-sm-10">
+      							<button type="submit" class="btn btn-default">Submit</button>
+    						</div>
   					</div>
 				</form>
-
 			</div>
 		</div>
 		<!-- Footer Information -->

@@ -16,32 +16,29 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-</head>
-	
+</head>	
 <body>
-	<!-- Page header: photo and social media -->
 	<div class="container-fluid" id="contain">
+		<!-- Page header: photo and social media -->
 		<?php include('hdr.php'); ?>
+		
 		<!-- Main Content -->
 		<div class="row" id="Main">
 			<div class="col-sm-12" id="volInfo">
 				<form class="form-horizontal" name="editEvent" action="/scripts/edit/changeEventLocation.php" method="post">
-					<!-- Event Creation Form -->
-  					
+					<!-- Edit Event Location Form -->
 					<div class="form-group">
-    					<label class="control-label col-sm-2" for="name">Change Event Location:</label>
-    					<div class="col-sm-10">
-      						<input type="text" name="location" class="form-control" id="shift_sign_up" placeholder="Location">
-    					</div>
+    						<label class="control-label col-sm-2" for="name">Change Event Location:</label>
+    						<div class="col-sm-10">
+      							<input type="text" name="location" class="form-control" id="shift_sign_up" placeholder="Location">
+    						</div>
   					</div>
-					
   					<div class="form-group"> 
-    					<div class="col-sm-offset-2 col-sm-10">
-      						<button type="submit" class="btn btn-default">Submit</button>
-    					</div>
+    						<div class="col-sm-offset-2 col-sm-10">
+      							<button type="submit" class="btn btn-default">Submit</button>
+    						</div>
   					</div>
 				</form>
-
 			</div>
 		</div>
 		<!-- Footer Information -->

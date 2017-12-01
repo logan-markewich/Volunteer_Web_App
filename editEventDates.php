@@ -27,7 +27,7 @@
 		<div class="row" id="Main">
 			<div class="col-sm-12" id="volInfo">
 				<form class="form-horizontal" name="editEvent" action="/scripts/edit/changeEventDates.php" method="post">
-					<!-- Event Creation Form -->				
+					<!-- Edit Event Dates Form -->				
 					<div class="form-group">
     						<label class="control-label col-sm-2" for="date">Change Start Date:</label>
     						<div class="col-sm-10">

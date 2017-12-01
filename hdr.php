@@ -4,7 +4,8 @@
 			<img src="img/fb.png" />
 		</a>
 		<a href="https://www.instagram.com/hollandiasoccer/" target="_blank">		
-			<img src="img/ig.png" >			</a>
+			<img src="img/ig.png" >			
+		</a>
 		<a href="https://www.youtube.com/channel/UCeyZXkqKTUyNs0S_tCL9QFw" target="_blank">
 			<img src="img/yt.png" >
 		</a>

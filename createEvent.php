@@ -1,4 +1,5 @@
 <?php 
+	//Start session and generate access code
 	session_start(); 
 	$accessCode = rand(0001, 9999);
 	require('./scripts/config/database.php');
@@ -20,14 +21,15 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<?php	if($_SESSION["username"] == NULL){
-			header("Location: index.php");
-		}
-		?>
-	
+<!-- Confirm the user is logged in -->
+<?php	
+	if($_SESSION["username"] == NULL){
+		header("Location: index.php");
+	}
+?>	
 <body>
-	<!-- Page header: photo and social media -->
 	<div class="container-fluid" id="contain">
+		<!-- Page header: photo and social media -->
 		<?php include('hdr.php'); ?>
 		
 		<div id="mnu">
@@ -65,7 +67,7 @@
   					</div>
   					<div class="form-group"> 
     					<div class="col-sm-offset-2 col-sm-10">
-							<input type="hidden" name="accessCode" value="<?php echo $accessCode ?>">
+						<input type="hidden" name="accessCode" value="<?php echo $accessCode ?>">
       						<button type="submit" class="btn btn-default">Submit</button>
     					</div>
   					</div>

@@ -1,8 +1,6 @@
 //////////
 DISCLAIMER:
-Not all functions described here are working. This document serves as a manual
-for a fully working website, as well as a vision for what our final website
-will be like.
+This website is not bug free. Use with caution.
 
 //////////
 Running the Website:

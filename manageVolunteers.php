@@ -115,14 +115,14 @@
 			}
 
 			// This must be a hyperlink
-				$("#xx").on('click', function (event) {
+			$("#xx").on('click', function (event) {
 
-    exportTableToCSV.apply(this, [$('#volTable'), 'export.csv']);
+    				exportTableToCSV.apply(this, [$('#volTable'), 'export.csv']);
 
-    // IF CSV, don't do event.preventDefault() or return false
-    // We actually need this to be a typical hyperlink
-});
-</script>
+    				// IF CSV, don't do event.preventDefault() or return false
+    				// We actually need this to be a typical hyperlink
+			});
+		</script>
 		</div>
 		<?php include('ftr.php'); ?>
 	</div>

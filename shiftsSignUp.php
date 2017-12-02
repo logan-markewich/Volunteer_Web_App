@@ -1,6 +1,6 @@
 <?php 
-session_start(); 
-require('./scripts/config/database.php');
+	session_start(); 
+	require('./scripts/config/database.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,53 +18,47 @@ require('./scripts/config/database.php');
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-	
+	</head>
 <body>
-	
 	<div class="container-fluid" id="contain">
 		<?php include('hdr.php'); ?>
 		
-		<!-- Php should make a row for every two events -->
 		<div id="Main">
-		
-		<h1> <?php echo($_SESSION["eventName"]); ?> </h1>
-		<?php
-			$table_name = str_replace(' ', '', $_SESSION["eventName"]);
-			$sql = ("select * from ". $table_name ." order by date_time asc");
-			$result = mysqli_query($conn, $sql);
-			$prevRowDate = NULL;
-			$dates = array();
-			$count = 0;
-			$dateCount = 0;
-			$dates[$count] = array();
-			if ($result) {
-				while($row = $result -> fetch_assoc()){
-					//Actually code make a shift area right here
-					if($prevRowDate != NULL) {
-						if($prevRowDate == $row['date_Time']){
-							array_push($dates[$count], $row);
+			<h1> <?php echo($_SESSION["eventName"]); ?> </h1>
+			<?php
+				$table_name = str_replace(' ', '', $_SESSION["eventName"]);
+				$sql = ("select * from ". $table_name ." order by date_time asc");
+				$result = mysqli_query($conn, $sql);
+				$prevRowDate = NULL;
+				$dates = array();
+				$count = 0;
+				$dateCount = 0;
+				$dates[$count] = array();
+				//sorting black magic
+				if ($result) {
+					while($row = $result -> fetch_assoc()){
+						if($prevRowDate != NULL) {
+							if($prevRowDate == $row['date_Time']){
+								array_push($dates[$count], $row);
+							}
+							else {
+								$count++;
+								$dates[$count] = array();
+								array_push($dates[$count], $row);
+							}
 						}
-						else {
-							$count++;
-							$dates[$count] = array();
-							array_push($dates[$count], $row);
-						}
-					}
-					
 					$prevRowDate = $row["date_Time"];
+					}
 				}
-			}
-					
-			foreach($dates as $value) {
-		?>
-		<div class="row" id="shiftRow">
-  			<div class="col-sm-12" id="shifts-left">
-			<?php 
-				$first = 1;
-				foreach($value as $rowValue) {
-					if($first == 1) {
+				foreach($dates as $value) {
 			?>
+			<div class="row" id="shiftRow">
+  				<div class="col-sm-12" id="shifts-left">
+				<?php 
+					$first = 1;
+					foreach($value as $rowValue) {
+						if($first == 1) {
+				?>
 				<h2> <?php echo(date('F j',strtotime($rowValue['date_Time']))); ?> </h2>
 				<div id="shiftarea">
 			<?php

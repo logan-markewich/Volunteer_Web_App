@@ -1,19 +1,19 @@
-<?php session_start(); 
-require('./scripts/config/database.php');
-$sql = ("SELECT * FROM cmpt370_rdynam.events WHERE idEvent='" . $_GET['id'] . "'");
-$result = mysqli_query($conn, $sql);
-$_SESSION['id'] = $_GET['id'];
-while($row = $result -> fetch_assoc()){
-$_SESSION["eventName"]=$row["eventName"];
-$_SESSION["location"]=$row["location"];
-$_SESSION["startDate"]=$row["startDate"];
-$_SESSION["endDate"]=$row["endDate"];
-$_SESSION["numShifts"]=$row["numShifts"];
+<?php 
+	session_start(); 
+	require('./scripts/config/database.php');
 
-}
+	$sql = ("SELECT * FROM cmpt370_rdynam.events WHERE idEvent='" . $_GET['id'] . "'");
+	$result = mysqli_query($conn, $sql);
+	$_SESSION['id'] = $_GET['id'];
+
+	while($row = $result -> fetch_assoc()){
+		$_SESSION["eventName"]=$row["eventName"];
+		$_SESSION["location"]=$row["location"];
+		$_SESSION["startDate"]=$row["startDate"];
+		$_SESSION["endDate"]=$row["endDate"];
+		$_SESSION["numShifts"]=$row["numShifts"];
+	}
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,13 +30,14 @@ $_SESSION["numShifts"]=$row["numShifts"];
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<?php	if($_SESSION["username"] == NULL){
-			header("Location: index.php");
-		}
-		?>
+<?php	
+	if($_SESSION["username"] == NULL){
+		header("Location: index.php");
+	}
+?>
 <body>
-	<!-- Page Header Information -->
 	<div class="container-fluid" id="contain" >
+		<!-- Page Header Information -->
 		<?php include('hdr.php'); ?>
 		
 		<div id="mnu">
@@ -73,8 +74,6 @@ $_SESSION["numShifts"]=$row["numShifts"];
 				</div>
 			</div>
 		</div>
-		
-			
 		<!-- Footer Information -->
 		<?php include('ftr.php'); ?>
 	</div>

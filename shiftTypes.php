@@ -1,11 +1,11 @@
-<?php session_start(); 
-require('./scripts/config/database.php');
-$sql = ("SELECT * FROM cmpt370_rdynam.shift_descriptions WHERE eventName='" . $_SESSION['eventName'] . "'");
-$result = mysqli_query($conn, $sql);
-$sdescrip = "";
+<?php 
+	session_start(); 
+	require('./scripts/config/database.php');
+
+	$sql = ("SELECT * FROM cmpt370_rdynam.shift_descriptions WHERE eventName='" . $_SESSION['eventName'] . "'");
+	$result = mysqli_query($conn, $sql);
+	$sdescrip = "";
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +23,6 @@ $sdescrip = "";
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="/modal.js"></script>
 </head>
-	
 <body>
 	<div class="container-fluid" id="contain">
 		<?php include('hdr.php'); ?>
@@ -33,7 +32,6 @@ $sdescrip = "";
 		</div>
 		
 		<div class="row" id="Main">
-
 			<div class="col-sm-6" id="shiftEditInfo">
 				<div class="dropdown">
 					<h3i>Select Shift Type to Edit: </h3i>
@@ -51,10 +49,9 @@ $sdescrip = "";
 					
 					</span><span class="caret"></span></button>
   					<ul class="dropdown-menu">
-    					<?php while($row = $result -> fetch_assoc()){
-						
-								?><li><a href="shiftTypes.php?id=<?php echo $row['idShiftDescrip'];?>"><?php echo $row['shiftType']; ?></a></li><?php
-											
+    					<?php 
+						while($row = $result -> fetch_assoc()){
+							?><li><a href="shiftTypes.php?id=<?php echo $row['idShiftDescrip'];?>"><?php echo $row['shiftType']; ?></a></li><?php
 						} ?>
   					</ul>
 				</div> 
@@ -62,25 +59,20 @@ $sdescrip = "";
 					<h3>- OR -</h3>
 				</div>
 				<form class="form-horizontal" name="newTypes" action="/scripts/create/newShiftType.php" method="post">
-					<!-- Event Creation Form -->
-  					
+					<!-- Shift Types Form -->
 					<div class="form-group">
-    					<label class="control-label col-sm-3" for="name">Add New Shift Type:</label>
-    					<div class="col-sm-7">
-      						<input type="text" name="shiftType" class="form-control" id="shift_sign_up" placeholder="Shift Type">
-    					</div>
+    						<label class="control-label col-sm-3" for="name">Add New Shift Type:</label>
+    						<div class="col-sm-7">
+      							<input type="text" name="shiftType" class="form-control" id="shift_sign_up" placeholder="Shift Type">
+    						</div>
   					</div>        
-  				
   					<div class="form-group"> 
-    					<div class="col-sm-12">
-      						<button type="submit" class="btn btn-default">Add</button>
-    					</div>
+    						<div class="col-sm-12">
+      							<button type="submit" class="btn btn-default">Add</button>
+    						</div>
   					</div>
 				</form>
-				
-				
 			</div>
-			
 			<div class="col-sm-6" id="volInfo">
 				<?php 
 					if (!empty($_GET)){
@@ -94,24 +86,22 @@ $sdescrip = "";
 				<h1> Shift Type Description </h1>
 				<form class="form-horizontal" name="editDescrip" action="/scripts/edit/changeShiftDescrip.php" method="post">
 					<div class="form-group">
-    					<div class="col-sm-12">
-      						<input type="text" name="description" class="form-control" id="shift_sign_up" value="<?php echo $sdescrip; ?>" >
+    						<div class="col-sm-12">
+      							<input type="text" name="description" class="form-control" id="shift_sign_up" value="<?php echo $sdescrip; ?>" >
 							<input type="hidden" name="shiftID" class="form-control" value="<?php echo $_GET['id']; ?>">
-    					</div>
+    						</div>
   					</div>        
-  				
   					<div class="form-group"> 
-    					<div class="col-sm-12">
-      						<button type="submit" class="btn btn-default">Submit</button>
-    					</div>
+    						<div class="col-sm-12">
+      							<button type="submit" class="btn btn-default">Submit</button>
+    						</div>
   					</div>
 				</form>	
 			</div>
 		</div>
-		
 		<script>	
 			$('.dropdown li').click(function(){
-    			$('#selected').text($(this).text());
+    				$('#selected').text($(this).text());
   			});			
 		</script>
 		<div>	

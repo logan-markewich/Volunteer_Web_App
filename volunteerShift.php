@@ -1,22 +1,22 @@
-<?php session_start(); 
-require('./scripts/config/database.php');
-$table_name = str_replace(' ', '', "cmpt370_rdynam.".$_SESSION['eventName']);
-$sql = ("SELECT * FROM ".$table_name." WHERE idShift='" . $_GET['id'] . "'");
-$result = mysqli_query($conn, $sql);
-while($row = $result -> fetch_assoc()){
+<?php 
+	session_start(); 
+	require('./scripts/config/database.php');
 
-	$_SESSION['shift_id'] = $row['idShift'];
+	$table_name = str_replace(' ', '', "cmpt370_rdynam.".$_SESSION['eventName']);
+	$sql = ("SELECT * FROM ".$table_name." WHERE idShift='" . $_GET['id'] . "'");
+	$result = mysqli_query($conn, $sql);
+
+	while($row = $result -> fetch_assoc()){
+		$_SESSION['shift_id'] = $row['idShift'];
 	
-	$name = $row['shift_position'];
-	$loc = $row['shift_location'];
-	$start = $row['start_Time'];
-	$end = $row['end_Time'];
-	$date = $row['date_Time'];
-	$numVol = $row['number_of_volunteers'];
-}
+		$name = $row['shift_position'];
+		$loc = $row['shift_location'];
+		$start = $row['start_Time'];
+		$end = $row['end_Time'];
+		$date = $row['date_Time'];
+		$numVol = $row['number_of_volunteers'];
+	}
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,16 +81,16 @@ while($row = $result -> fetch_assoc()){
 						<input type="name" name="firstName" class="form-control" id="firstName">
 					</div>
 					<div class="form-group">
-    					<label for="lastName">Last Name:</label>
-    					<input type="name" name="lastName" class="form-control" id="lastName">
+    						<label for="lastName">Last Name:</label>
+    						<input type="name" name="lastName" class="form-control" id="lastName">
   					</div>
 					<div class="form-group">
-    					<label for="email">Email address:</label>
-    					<input type="email" name="email" class="form-control" id="email">
+    						<label for="email">Email address:</label>
+    						<input type="email" name="email" class="form-control" id="email">
   					</div>
 					<div class="form-group">
-    					<label for="pwd">Phone Number:</label>
-    					<input type="number" name="phoneNumber" class="form-control" id="phoneNumber">
+    						<label for="pwd">Phone Number:</label>
+    						<input type="number" name="phoneNumber" class="form-control" id="phoneNumber">
   					</div>
 					<div class="form-group">
 						<input type="hidden" name="shiftId" value="<?php echo $_SESSION['shift_id']; ?>">

@@ -1,3 +1,5 @@
+// Script to delete a shift from a corresponding event
+
 <?php
 require('../config/database.php');
 session_start();

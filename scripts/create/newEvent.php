@@ -1,3 +1,6 @@
+// This script creates the event in the events table, as well as that tables respective shifts table, using 
+// the data the user entered in the html form
+
 <?php
 require('../config/database.php');
 session_start();

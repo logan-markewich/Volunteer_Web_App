@@ -1,3 +1,5 @@
+// This script removes a users session variables, therefor kicking them out of the pages that require them
+
 <?php
 require('database.php');
 mysqli_close($conn);

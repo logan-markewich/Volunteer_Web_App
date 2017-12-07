@@ -1,3 +1,5 @@
+// This script takes the data from the shift form and creates a new shift in the table for the proper event
+
 <?php
 require('../config/database.php');
 session_start();

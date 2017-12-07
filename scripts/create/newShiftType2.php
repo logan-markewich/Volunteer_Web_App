@@ -1,3 +1,5 @@
+// This script creates/edits a new shift type description for a shift type.
+
 <?php
 require('../config/database.php');
 session_start();

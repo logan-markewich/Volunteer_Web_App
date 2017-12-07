@@ -1,3 +1,5 @@
+// This script sets our connection to the database, so we don't have to type it every time
+
 <?php
 
 $servername = "db.cs.usask.ca";

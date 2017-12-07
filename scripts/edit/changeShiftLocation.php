@@ -1,3 +1,5 @@
+// Script to change location of a shift within an event
+
 <?php
 require('../config/database.php');
 session_start();

@@ -1,3 +1,5 @@
+// Script to change the date of a corresponding event
+
 <?php
 require('../config/database.php');
 session_start();

@@ -1,3 +1,5 @@
+// Script that will update the shift type(and its description as well)
+
 <?php
 require('../config/database.php');
 session_start();

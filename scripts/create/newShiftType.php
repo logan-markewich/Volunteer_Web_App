@@ -1,3 +1,5 @@
+// This script adds a new shift type title for a corresponding event in our database
+
 <?php
 require('../config/database.php');
 session_start();

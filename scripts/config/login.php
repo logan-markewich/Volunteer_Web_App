@@ -1,3 +1,6 @@
+// This script takes the data a user used to log in, and confirms that the credentials are correct. If they are correct,
+// It will log the user into their respective dashboard by using their session variables.
+
 <?php
 require('database.php');
 

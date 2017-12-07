@@ -1,3 +1,5 @@
+// Script to change the start and end time of a shift
+
 <?php
 require('../config/database.php');
 session_start();

@@ -1,3 +1,5 @@
+// This script takes the data enetered and creates a new event creator account in the database
+
 <?php
 require('../config/database.php');
 

@@ -1,3 +1,5 @@
+// Script to update the location of a corresponding event
+
 <?php
 require('../config/database.php');
 session_start();

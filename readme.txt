@@ -6,7 +6,10 @@ This website is not bug free. Use with caution.
 Running the Website:
 To operate this program, it must be run on a server capable of running PHP, as
 well as on a computer that has a working internet connection. An Apache
-server(XAMPP) is the server that the program was tested on.
+server(XAMPP) is the server that the program was tested on. Once the project 
+source files are in the proper location for your chosen host server, you can
+now run the website on a local port. If you are using XAMPP for example, simply
+type localhost\ into a browser to navigate to the website.
 
 //////////
 Logging In:
@@ -60,14 +63,12 @@ a new page where you can edit any aspect of the shift.
 //////////
 Managing Volunteers:
 In the event overview page, click manage volunteers. You will be presented with
-a list of volunteers and what shifts they are signed up for. You can remove or
-send an email to any one of the volunteers, as well as exporting all their info
-for future use.
+a list of volunteers and what shifts they are signed up for. There is also a button
+at the bottom of the table to export volunteers information as a csv file.
 
 //////////
 Volunteering for a Shift:
 On the main page, enter the access code for an event that is already created.
 The event creator would have given you the code. Here, you can see a list of
 shifts, sorted by date, for you to sign up for. Select the shift you like to see
-more details, and to enter your info to sign up for a shift. When you sign up,
-you will get a notification email confirming you signed up for a shift.
+more details, and to enter your info to sign up for a shift.

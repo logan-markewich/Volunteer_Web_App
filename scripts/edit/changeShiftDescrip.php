@@ -1,3 +1,5 @@
+// Update description for a shift at an event
+
 <?php
 require('../config/database.php');
 session_start();

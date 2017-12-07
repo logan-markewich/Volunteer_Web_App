@@ -1,3 +1,5 @@
+// Script delete an event and an events shift table
+
 <?php
 require('../config/database.php');
 session_start();

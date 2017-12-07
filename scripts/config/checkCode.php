@@ -1,3 +1,7 @@
+// This script checks that an access code relates to an event in the database.
+// If the event is in the databse, it redirects the volunteer to its shifts page
+// Otherwise, it's an error.
+
 <?php
 require('database.php');
 

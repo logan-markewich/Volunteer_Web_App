@@ -1,3 +1,5 @@
+// Script to update the number of positions in an event
+
 <?php
 require('../config/database.php');
 session_start();

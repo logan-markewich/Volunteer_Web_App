@@ -1,3 +1,5 @@
+// This script signs up a volunteer for a shift, and updates the number of shifts left for that posting
+
 <?php
 require('../config/database.php');
 session_start();
